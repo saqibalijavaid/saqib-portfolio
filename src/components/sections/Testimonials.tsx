@@ -11,12 +11,12 @@ interface ExperienceItem {
 
 const experience: ExperienceItem[] = [
   {
-    role: 'Associate Software Engineer — Frontend',
+    role: 'Software Engineer',
     company: 'Barq Dev',
     period: 'Mar 2026 — Present',
     location: 'Lahore',
     description:
-      'Build and maintain web and mobile applications with React.js and React Native. Collaborate with cross-functional teams to design, implement, and optimize software solutions using agile methodologies.',
+      'Build mobile applications with React Native and web applications with React and Next.js. Collaborate with cross-functional teams to design, implement, and optimize software solutions using agile methodologies.',
   },
   {
     role: 'Associate Software Engineer',

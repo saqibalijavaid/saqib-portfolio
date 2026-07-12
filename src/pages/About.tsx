@@ -35,6 +35,7 @@ const LinkedInBadge: React.FC = () => {
     link.className = 'badge-base__link LI-simple-link';
     link.href = 'https://pk.linkedin.com/in/saqib-ali-javaid?trk=profile-badge';
     link.textContent = 'Saqib Ali Javaid';
+    link.style.display = 'none';
     badgeDiv.appendChild(link);
 
     containerRef.current.appendChild(badgeDiv);

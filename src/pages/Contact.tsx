@@ -119,7 +119,6 @@ const Contact: React.FC = () => {
                 <div className="ml-4">
                   <p className="font-medium text-gray-900 dark:text-white">Based in</p>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Madina Colony, Walton Cantt, <br />
                     Lahore, Pakistan
                   </p>
                 </div>

@@ -65,10 +65,10 @@ const Technologies: React.FC = () => {
       <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-gray-50 dark:from-gray-900 to-transparent z-10 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <h2 className="text-base font-semibold text-blue-600 dark:text-blue-400 tracking-wide uppercase">
+        <h2 className="text-base font-semibold text-accent-700 dark:text-accent-400 tracking-wide uppercase">
           Tech Stack
         </h2>
-        <p className="mt-2 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl font-sans">
+        <p className="mt-2 font-display font-normal text-4xl text-gray-900 dark:text-white sm:text-5xl">
           Tools I work with daily
         </p>
         <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto font-mono text-sm">
@@ -112,11 +112,11 @@ const TechBadge: React.FC<{ tech: (typeof techStack)[0] }> = ({ tech }) => (
     bg-white
     border border-gray-200
     shadow-[0_2px_8px_rgba(0,0,0,0.04)]
-    hover:border-blue-500
-    hover:shadow-blue-100
+    hover:border-accent-500
+    hover:shadow-accent-100
     dark:bg-gray-800
     dark:border-gray-700
-    dark:hover:border-blue-400
+    dark:hover:border-accent-400
     dark:shadow-none
   "
   >

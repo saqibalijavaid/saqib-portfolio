@@ -12,7 +12,7 @@ const HeroPattern: React.FC = () => {
          - Translated to position correctly on the right side.
          - Opacity set low for subtlety.
       */}
-      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/4 -rotate-12 opacity-60">
+      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/4 -rotate-12 opacity-40">
         <div className="flex flex-col gap-8 md:gap-12">
           {Array.from({ length: rows }).map((_, rowIndex) => (
             <div
@@ -26,10 +26,10 @@ const HeroPattern: React.FC = () => {
                   key={colIndex}
                   // 3. The Pill Shape
                   // - w-24 h-8 + rounded-full = Pill
-                  // - bg-blue-200/30 = Soft semi-transparent blue
+                  // - bg-accent-200/30 = Soft semi-transparent blue
                   // - blur-sm = Removes harsh edges for the "airy" feel
 
-                  className="w-16 h-6 md:w-24 md:h-8 rounded-full bg-blue-300/50 dark:bg-blue-500/30 blur-sm"
+                  className="w-16 h-6 md:w-24 md:h-8 rounded-full bg-accent-300/50 dark:bg-accent-500/30 blur-sm"
                 />
               ))}
             </div>

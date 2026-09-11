@@ -46,10 +46,10 @@ const Features: React.FC = () => {
     <div className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center mb-12">
-          <h2 className="text-base text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase">
+          <h2 className="text-base text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase">
             Featured Work
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          <p className="mt-2 font-display font-normal text-4xl leading-tight text-gray-900 dark:text-white sm:text-5xl">
             Things I've built
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
@@ -67,13 +67,13 @@ const Features: React.FC = () => {
               className="group flex flex-col p-8 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700/50 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-blue-600 text-white group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-accent-500 text-white group-hover:scale-110 transition-transform duration-300">
                   <project.icon className="h-6 w-6" strokeWidth={1.75} />
                 </div>
-                <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors" />
               </div>
 
-              <p className="font-mono text-xs uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+              <p className="font-mono text-xs uppercase tracking-wider text-accent-700 dark:text-accent-400 mb-2">
                 {project.tagline}
               </p>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">

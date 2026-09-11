@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
 
       {/* 3. Bottom Decorative Element */}
       <div className="mb-4">
-        <div className="w-2 h-12 bg-blue-600 rounded-full"></div>
+        <div className="w-2 h-12 bg-accent-500 rounded-full"></div>
       </div>
     </aside>
   );

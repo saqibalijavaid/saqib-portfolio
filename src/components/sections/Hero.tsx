@@ -7,7 +7,7 @@ import HeroPattern from './HeroPattern';
 const Hero: React.FC = () => {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-gray-900 pt-10 pb-20 transition-colors duration-300">
-      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-blue-50 dark:bg-blue-900/10 rounded-full blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-accent-50 dark:bg-accent-900/10 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
       <HeroPattern />
 
@@ -21,10 +21,10 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full py-12">
           <div className="lg:col-span-7">
             <div className="flex items-center space-x-2 mb-8 animate-fade-in-up">
-              <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                <Terminal className="text-orange-600 dark:text-orange-400 w-6 h-6" />
+              <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                <Terminal className="text-gray-600 dark:text-gray-300 w-6 h-6" />
               </div>
-              <span className="font-mono text-sm font-bold text-orange-600 dark:text-orange-400 tracking-wider uppercase">
+              <span className="font-mono text-sm font-bold text-gray-500 dark:text-gray-400 tracking-wider uppercase">
                 Saqib Ali Javaid
               </span>
             </div>
@@ -33,9 +33,9 @@ const Hero: React.FC = () => {
               A step smaller than the previous single-column scale — 128px type
               cannot share a row with an image without one of them overflowing.
             */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-gray-900 dark:text-white tracking-tighter leading-[0.9] mb-8">
+            <h1 className="font-display font-normal text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-gray-900 dark:text-white leading-[0.85] mb-8">
               Software <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-200">
                 Engineer.
               </span>
             </h1>
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
                   grey backdrop reads as framed rather than pasted on. */}
               <div
                 aria-hidden="true"
-                className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-blue-500/20 via-indigo-500/20 to-transparent blur-2xl"
+                className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-accent-500/20 via-accent-400/20 to-transparent blur-2xl"
               />
               <img
                 src="/saqib.webp"

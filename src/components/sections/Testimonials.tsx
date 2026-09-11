@@ -49,10 +49,10 @@ const Testimonials: React.FC = () => {
     <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center mb-12">
-          <h2 className="text-base text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase">
+          <h2 className="text-base text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase">
             Experience
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          <p className="mt-2 font-display font-normal text-4xl leading-tight text-gray-900 dark:text-white sm:text-5xl">
             Where I've worked
           </p>
         </div>
@@ -60,7 +60,7 @@ const Testimonials: React.FC = () => {
         <ol className="relative border-l-2 border-gray-200 dark:border-gray-700 ml-4">
           {experience.map((item, index) => (
             <li key={index} className="mb-12 ml-8 last:mb-0">
-              <span className="absolute -left-[17px] flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 ring-8 ring-gray-50 dark:ring-gray-800">
+              <span className="absolute -left-[17px] flex items-center justify-center w-8 h-8 rounded-full bg-accent-500 ring-8 ring-gray-50 dark:ring-gray-800">
                 <Briefcase className="w-4 h-4 text-white" />
               </span>
 
@@ -73,7 +73,7 @@ const Testimonials: React.FC = () => {
                     {item.period}
                   </span>
                 </div>
-                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">
+                <p className="text-accent-700 dark:text-accent-400 font-semibold mb-3">
                   {item.company} · <span className="text-gray-500 dark:text-gray-400 font-normal">{item.location}</span>
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">

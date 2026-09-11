@@ -68,12 +68,12 @@ const About: React.FC = () => {
       {/* 1. HERO */}
       <div className="relative pt-20 pb-20 border-b border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="font-mono text-blue-600 dark:text-blue-400 font-semibold tracking-wider uppercase mb-4 block">
+          <span className="font-mono text-accent-700 dark:text-accent-400 font-semibold tracking-wider uppercase mb-4 block">
             About Me
           </span>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-8 leading-tight max-w-5xl mx-auto">
+          <h1 className="font-display font-normal text-5xl md:text-7xl text-gray-900 dark:text-white mb-8 leading-[0.95] max-w-5xl mx-auto">
             Building in public — <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-200">
               the wins, fails &amp; everything between.
             </span>
           </h1>
@@ -90,8 +90,8 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-4">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                <Zap className="text-blue-600 dark:text-blue-400 w-6 h-6" />
+              <div className="w-12 h-12 bg-accent-100 dark:bg-accent-900/30 rounded-lg flex items-center justify-center">
+                <Zap className="text-accent-700 dark:text-accent-400 w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Ship fast</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -154,14 +154,14 @@ const About: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                <GraduationCap className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+              <div className="w-10 h-10 bg-accent-100 dark:bg-accent-900/30 rounded-lg flex items-center justify-center">
+                <GraduationCap className="text-accent-700 dark:text-accent-400 w-5 h-5" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h2>
             </div>
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
               <p className="font-bold text-gray-900 dark:text-white">BS Computer Science</p>
-              <p className="text-blue-600 dark:text-blue-400 font-semibold mt-1">
+              <p className="text-accent-700 dark:text-accent-400 font-semibold mt-1">
                 Punjab University College of Information and Technology (PUCIT)
               </p>
               <p className="text-gray-500 dark:text-gray-400 font-mono text-sm mt-2">
@@ -199,8 +199,8 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                <Link2 className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+              <div className="w-10 h-10 bg-accent-100 dark:bg-accent-900/30 rounded-lg flex items-center justify-center">
+                <Link2 className="text-accent-700 dark:text-accent-400 w-5 h-5" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Connect with Me</h2>
             </div>
@@ -222,7 +222,7 @@ const About: React.FC = () => {
 
       {/* 6. BOTTOM CTA */}
       <div className="py-24 bg-gray-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-600 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-accent-500 rounded-full blur-3xl opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2">
@@ -242,9 +242,9 @@ const About: React.FC = () => {
             <div className="p-8 border border-gray-700 rounded-2xl bg-gray-800/50 backdrop-blur-sm max-w-sm">
               <p className="font-mono text-green-400 text-sm mb-4">saqib@portfolio:~$ status</p>
               <div className="space-y-2 text-gray-300 font-mono text-sm">
-                <p>✓ Location: <span className="text-blue-400">Lahore, PK</span></p>
+                <p>✓ Location: <span className="text-accent-400">Lahore, PK</span></p>
                 <p>✓ Availability: <span className="text-green-400">Open to work</span></p>
-                <p>✓ Currently: <span className="animate-pulse text-blue-400">Shipping at Barq Dev</span></p>
+                <p>✓ Currently: <span className="animate-pulse text-accent-400">Shipping at Barq Dev</span></p>
               </div>
               <div className="mt-6 pt-6 border-t border-gray-700">
                 <p className="text-xs text-gray-500">Let's build something worth shipping.</p>

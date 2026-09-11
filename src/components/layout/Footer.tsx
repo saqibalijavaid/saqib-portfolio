@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            <span className="text-2xl font-bold text-accent-700 dark:text-accent-400">
               Saqib Ali Javaid<span className="text-gray-900 dark:text-white">.</span>
             </span>
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 max-w-md">

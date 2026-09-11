@@ -76,10 +76,10 @@ const Projects: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase text-sm mb-2">
+          <h2 className="text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase text-sm mb-2">
             Projects
           </h2>
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display font-normal text-5xl text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
             Selected Work
           </h1>
           <p className="mt-6 text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
@@ -107,7 +107,7 @@ const Projects: React.FC = () => {
               className="group grid md:grid-cols-5 gap-8 p-8 md:p-10 bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 rounded-2xl hover:shadow-xl transition-all duration-300"
             >
               <div className="md:col-span-1">
-                <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-blue-600 text-white group-hover:scale-105 transition-transform duration-300">
+                <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-accent-500 text-white group-hover:scale-105 transition-transform duration-300">
                   <project.icon size={32} strokeWidth={1.5} />
                 </div>
                 <p className="mt-6 font-mono text-xs uppercase tracking-wider text-gray-400">
@@ -116,7 +116,7 @@ const Projects: React.FC = () => {
               </div>
 
               <div className="md:col-span-4">
-                <p className="font-mono text-xs uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+                <p className="font-mono text-xs uppercase tracking-wider text-accent-700 dark:text-accent-400 mb-2">
                   {project.tagline}
                 </p>
                 <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
@@ -132,7 +132,7 @@ const Projects: React.FC = () => {
                       key={bullet}
                       className="flex items-start text-gray-600 dark:text-gray-400"
                     >
-                      <span className="text-blue-600 dark:text-blue-400 font-mono mr-3 mt-1">
+                      <span className="text-accent-700 dark:text-accent-400 font-mono mr-3 mt-1">
                         →
                       </span>
                       <span>{bullet}</span>
@@ -155,7 +155,7 @@ const Projects: React.FC = () => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                  className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
                 >
                   {project.liveLabel}
                   <ExternalLink className="w-4 h-4" />

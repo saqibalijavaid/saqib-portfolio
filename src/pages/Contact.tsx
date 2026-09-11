@@ -17,7 +17,7 @@ import { contactSchema, type ContactInput } from '../lib/contactSchema';
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
 const inputClass =
-  'mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 bg-gray-50 dark:placeholder-gray-400';
+  'mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-accent-500 focus:ring-accent-500 p-3 bg-gray-50 dark:placeholder-gray-400';
 const inputErrorClass =
   'mt-1 block w-full rounded-md border-red-500 dark:border-red-500 dark:bg-gray-700 dark:text-white shadow-sm focus:border-red-500 focus:ring-red-500 p-3 bg-gray-50 dark:placeholder-gray-400';
 const errorTextClass = 'mt-1 text-sm text-red-600 dark:text-red-400';
@@ -72,10 +72,10 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="font-mono text-blue-600 dark:text-blue-400 font-semibold tracking-wider uppercase text-sm mb-2 block">
+          <span className="font-mono text-accent-700 dark:text-accent-400 font-semibold tracking-wider uppercase text-sm mb-2 block">
             Contact
           </span>
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+          <h1 className="font-display font-normal text-5xl text-gray-900 dark:text-white sm:text-6xl">
             Let's talk.
           </h1>
           <p className="mt-4 text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
                 href="mailto:saqibalijavaid2@gmail.com"
                 className="flex items-start hover:opacity-80 transition-opacity"
               >
-                <Mail className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                <Mail className="w-6 h-6 text-accent-700 mt-1 flex-shrink-0" />
                 <div className="ml-4">
                   <p className="font-medium text-gray-900 dark:text-white">Email</p>
                   <p className="text-gray-600 dark:text-gray-400">saqibalijavaid2@gmail.com</p>
@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
                 href="tel:+923066778721"
                 className="flex items-start hover:opacity-80 transition-opacity"
               >
-                <Phone className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                <Phone className="w-6 h-6 text-accent-700 mt-1 flex-shrink-0" />
                 <div className="ml-4">
                   <p className="font-medium text-gray-900 dark:text-white">Phone</p>
                   <p className="text-gray-600 dark:text-gray-400">+92 306 6778721</p>
@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
               </a>
 
               <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                <MapPin className="w-6 h-6 text-accent-700 mt-1 flex-shrink-0" />
                 <div className="ml-4">
                   <p className="font-medium text-gray-900 dark:text-white">Based in</p>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -134,7 +134,7 @@ const Contact: React.FC = () => {
                   href="https://github.com/saqibalijavaid"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-11 h-11 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="flex items-center justify-center w-11 h-11 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-accent-500 hover:text-accent-700 dark:hover:text-accent-400 transition-colors"
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5" />
@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
                   href="https://www.linkedin.com/in/saqib-ali-javaid"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-11 h-11 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="flex items-center justify-center w-11 h-11 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-accent-500 hover:text-accent-700 dark:hover:text-accent-400 transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -152,7 +152,7 @@ const Contact: React.FC = () => {
                   href="https://leetcode.com/u/saqibalijavaid/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-11 h-11 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="flex items-center justify-center w-11 h-11 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-accent-500 hover:text-accent-700 dark:hover:text-accent-400 transition-colors"
                   aria-label="LeetCode"
                 >
                   <Code2 className="w-5 h-5" />
@@ -278,7 +278,7 @@ const Contact: React.FC = () => {
                       ? 'bg-green-600 hover:bg-green-700'
                       : status === 'error'
                         ? 'bg-red-600 hover:bg-red-700'
-                        : 'bg-blue-600 hover:bg-blue-700'
+                        : 'bg-accent-500 hover:bg-accent-600'
                   }
                   disabled:opacity-70 disabled:cursor-not-allowed
                 `}

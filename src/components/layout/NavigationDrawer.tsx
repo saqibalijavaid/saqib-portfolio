@@ -20,7 +20,7 @@ const NavigationDrawer: React.FC<NavigationDrawerProps> = ({ isOpen, onClose }) 
 
     if (isActive) {
       // ACTIVE STATE: Blue text + Left Border Indicator + Indentation
-      return `${baseClasses} text-blue-600 dark:text-blue-400 border-l-4 border-blue-600 dark:border-blue-400 pl-6`;
+      return `${baseClasses} text-accent-700 dark:text-accent-400 border-l-4 border-accent-600 dark:border-accent-400 pl-6`;
     } else {
       // INACTIVE STATE: Gray text + No Border + Standard Padding
       return `${baseClasses} text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white border-l-4 border-transparent pl-0 hover:pl-2`;
@@ -71,7 +71,7 @@ const NavigationDrawer: React.FC<NavigationDrawerProps> = ({ isOpen, onClose }) 
             <Link
               to="/contact"
               onClick={onClose}
-              className="flex items-center text-blue-600 dark:text-blue-400 font-semibold cursor-pointer group"
+              className="flex items-center text-accent-700 dark:text-accent-400 font-semibold cursor-pointer group"
             >
               <span>Let's work together</span>
               <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />

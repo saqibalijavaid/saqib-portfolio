@@ -14,7 +14,7 @@
  * through to the SPA.
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -116,11 +116,44 @@ const buildHead = (path, page) => {
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
 };
 
+/*
+ * Preload hints.
+ *
+ * The display font is needed by the <h1> on every page, and the portrait is the
+ * likely Largest Contentful Paint element on the homepage. Both are discovered
+ * late otherwise — the font only after the CSS parses, the image only after
+ * React renders — so the browser starts fetching them well after it could have.
+ *
+ * The font filename carries a build hash, so it is read from the output rather
+ * than hardcoded.
+ */
+const displayFont = readdirSync(join(distDir, 'assets')).find(
+  (f) => f.startsWith('instrument-serif-latin-400-normal') && f.endsWith('.woff2')
+);
+
+if (!displayFont) {
+  console.warn('[prerender] display font not found in dist/assets — skipping font preload');
+}
+
+const preloads = (path) =>
+  [
+    displayFont
+      ? `<link rel="preload" as="font" type="font/woff2" href="/assets/${displayFont}" crossorigin />`
+      : '',
+    // Only the homepage renders the portrait.
+    path === '/'
+      ? '<link rel="preload" as="image" href="/saqib.webp" fetchpriority="high" />'
+      : '',
+  ]
+    .filter(Boolean)
+    .join('\n    ');
+
 const before = template.slice(0, template.indexOf(START));
 const after = template.slice(template.indexOf(END) + END.length);
 
 for (const [path, page] of Object.entries(seo.pages)) {
-  const html = `${before}${buildHead(path, page).trim()}${after}`;
+  const hints = preloads(path);
+  const html = `${before}${hints ? `${hints}\n    ` : ''}${buildHead(path, page).trim()}${after}`;
   const outFile = path === '/' ? join(distDir, 'index.html') : join(distDir, path, 'index.html');
 
   mkdirSync(dirname(outFile), { recursive: true });

@@ -9,7 +9,7 @@ const ThemeToggle: React.FC = () => {
     <button
       onClick={toggleTheme}
       className="
-        p-2 rounded-full cursor-pointer
+        p-2 min-w-11 min-h-11 flex items-center justify-center rounded-full cursor-pointer
         bg-gray-100 text-gray-600 hover:bg-gray-200 
         dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 
         transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-500

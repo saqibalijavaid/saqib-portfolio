@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import NavigationDrawer from './NavigationDrawer';
 import Footer from './Footer';
+import SeoSync from '../common/SeoSync';
 
 const Layout: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -13,6 +14,9 @@ const Layout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Keeps <head> metadata correct across client-side navigation */}
+      <SeoSync />
+
       <Sidebar isOpen={isDrawerOpen} toggleMenu={toggleMenu} />
 
       <NavigationDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />

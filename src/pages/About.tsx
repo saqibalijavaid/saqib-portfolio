@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
 import { Zap, Target, Users, GraduationCap, Award, Link2 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/theme-context';
 
 const certifications = [
   { name: 'Programming for Everybody (Getting Started with Python)', org: 'University of Michigan — Coursera' },
@@ -47,10 +47,15 @@ const LinkedInBadge: React.FC = () => {
     script.defer = true;
     containerRef.current.appendChild(script);
 
+    /*
+     * Capture the node now rather than reading the ref during cleanup. By the
+     * time cleanup runs React may have detached or replaced the element, so
+     * containerRef.current could point somewhere else — or be null — and the
+     * badge markup would be left behind.
+     */
+    const container = containerRef.current;
     return () => {
-      if (containerRef.current) {
-        containerRef.current.innerHTML = '';
-      }
+      container.innerHTML = '';
     };
   }, [theme]);
 

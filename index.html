@@ -2,10 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Saqib Ali Javaid — Full Stack Software Engineer building MERN apps and automation systems. Based in Lahore, Pakistan." />
-    <title>Saqib Ali Javaid | Software Engineer</title>
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!--
+      Apply the saved/system theme before first paint so prerendered HTML does
+      not flash light-mode content at dark-mode visitors.
+      Mirrors the logic in src/context/ThemeContext.tsx.
+    -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme =
+            saved ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.classList.add(theme);
+        } catch (e) {
+          /* localStorage unavailable — fall through to default styling */
+        }
+      })();
+    </script>
+
+    <!-- SEO:START — replaced per route at build time by scripts/prerender.mjs -->
+    <title>Saqib Ali Javaid — Full-Stack &amp; Automation Engineer</title>
+    <meta
+      name="description"
+      content="Full-stack developer and automation engineer in Lahore, Pakistan. I build MERN apps, REST APIs and AI-powered workflows that save hours of manual work."
+    />
+    <link rel="canonical" href="https://saqibalijavaid.me/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#111827" />
+
+    <meta property="og:site_name" content="Saqib Ali Javaid" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://saqibalijavaid.me/" />
+    <meta property="og:title" content="Saqib Ali Javaid — Full-Stack &amp; Automation Engineer" />
+    <meta
+      property="og:description"
+      content="I build MERN apps, REST APIs and AI-powered workflows that save hours of manual work."
+    />
+    <meta property="og:image" content="https://saqibalijavaid.me/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Saqib Ali Javaid — Full-Stack Developer &amp; Automation Engineer"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@saqibalijavaid" />
+    <meta name="twitter:creator" content="@saqibalijavaid" />
+    <meta name="twitter:title" content="Saqib Ali Javaid — Full-Stack &amp; Automation Engineer" />
+    <meta
+      name="twitter:description"
+      content="I build MERN apps, REST APIs and AI-powered workflows that save hours of manual work."
+    />
+    <meta name="twitter:image" content="https://saqibalijavaid.me/og-image.png" />
+    <!-- SEO:END -->
   </head>
   <body>
     <div id="root"></div>

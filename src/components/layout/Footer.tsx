@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+            <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 tracking-wider uppercase">
               Navigate
             </h3>
             <ul className="mt-4 space-y-3">
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
 
           {/* Socials */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+            <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 tracking-wider uppercase">
               Connect
             </h3>
             <div className="flex space-x-6 mt-4">
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
                 href="https://github.com/saqibalijavaid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-6 w-6" />
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/saqib-ali-javaid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-6 w-6" />
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                 href="https://leetcode.com/u/saqibalijavaid/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
                 aria-label="LeetCode"
               >
                 <Code2 className="h-6 w-6" />
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                   navigator.clipboard.writeText('saqibalijavaid2@gmail.com');
                   alert('Email copied to clipboard!');
                 }}
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors cursor-pointer"
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors cursor-pointer"
                 aria-label="Copy email address"
                 title="Click to copy email"
               >
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-8 border-t border-gray-200 dark:border-gray-800 pt-8">
-          <p className="text-base text-gray-400 text-center">
+          <p className="text-base text-gray-500 dark:text-gray-400 text-center">
             &copy; {new Date().getFullYear()} Saqib Ali Javaid.
           </p>
         </div>

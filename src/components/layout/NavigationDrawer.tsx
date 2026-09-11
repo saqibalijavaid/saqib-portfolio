@@ -23,7 +23,7 @@ const NavigationDrawer: React.FC<NavigationDrawerProps> = ({ isOpen, onClose }) 
       return `${baseClasses} text-blue-600 dark:text-blue-400 border-l-4 border-blue-600 dark:border-blue-400 pl-6`;
     } else {
       // INACTIVE STATE: Gray text + No Border + Standard Padding
-      return `${baseClasses} text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white border-l-4 border-transparent pl-0 hover:pl-2`;
+      return `${baseClasses} text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white border-l-4 border-transparent pl-0 hover:pl-2`;
     }
   };
 

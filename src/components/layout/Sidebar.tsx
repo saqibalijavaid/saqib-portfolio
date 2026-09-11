@@ -20,10 +20,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
         {isOpen ? <X size={32} /> : <Menu size={32} />}
       </button>
 
-      {/* 2. Vertical Text Branding */}
+      {/* 2. Vertical Text Branding
+          Deliberately a <span>, not a heading: every page already has its own
+          <h1>, and a second one here would compete with it for search engines
+          and make the heading outline confusing for screen reader users. */}
       <div className="flex-grow flex items-center justify-center">
-        <h1
-          className="text-2xl font-bold text-gray-400 tracking-widest uppercase select-none"
+        <span
+          className="text-2xl font-bold text-gray-500 dark:text-gray-400 tracking-widest uppercase select-none"
           style={{
             writingMode: 'vertical-rl',
             textOrientation: 'mixed',
@@ -31,7 +34,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
           }}
         >
           Saqib Ali Javaid
-        </h1>
+        </span>
       </div>
 
       {/* 3. Bottom Decorative Element */}

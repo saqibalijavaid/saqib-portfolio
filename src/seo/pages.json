@@ -1,0 +1,38 @@
+{
+  "siteUrl": "https://saqibalijavaid.me",
+  "siteName": "Saqib Ali Javaid",
+  "ogImage": "/og-image.png",
+  "ogImageAlt": "Saqib Ali Javaid — Full-Stack Developer & Automation Engineer",
+  "twitterHandle": "@saqibalijavaid",
+  "personName": "Saqib Ali Javaid",
+  "jobTitle": "Full-Stack Developer & Automation Engineer",
+  "location": "Lahore, Pakistan",
+  "email": "saqibalijavaid2@gmail.com",
+  "sameAs": [
+    "https://github.com/saqibalijavaid",
+    "https://www.linkedin.com/in/saqib-ali-javaid",
+    "https://x.com/saqibalijavaid"
+  ],
+  "pages": {
+    "/": {
+      "title": "Saqib Ali Javaid — Full-Stack & Automation Engineer",
+      "description": "Full-stack developer and automation engineer in Lahore, Pakistan. I build MERN apps, REST APIs and AI-powered workflows that save hours of manual work.",
+      "ogDescription": "I build MERN apps, REST APIs and AI-powered workflows that save hours of manual work."
+    },
+    "/projects": {
+      "title": "Selected Work — Saqib Ali Javaid",
+      "description": "Real projects shipped for real clients — full-stack applications, automation pipelines and systems quietly running in the background while businesses grow.",
+      "ogDescription": "Full-stack applications, automation pipelines and systems shipped for real clients."
+    },
+    "/about": {
+      "title": "About — Saqib Ali Javaid",
+      "description": "I'm Saqib, a full-stack developer and automation engineer in Lahore. I help coaches, consultants and small businesses build systems that save time.",
+      "ogDescription": "Full-stack developer and automation engineer helping small businesses build systems that save time."
+    },
+    "/contact": {
+      "title": "Contact — Saqib Ali Javaid",
+      "description": "Whether it's a full-stack build or an automation you've been meaning to ship — send a message and I'll reply within 24 hours.",
+      "ogDescription": "Send a message about your build or automation — I reply within 24 hours."
+    }
+  }
+}

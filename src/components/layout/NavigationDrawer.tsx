@@ -37,9 +37,16 @@ const NavigationDrawer: React.FC<NavigationDrawerProps> = ({ isOpen, onClose }) 
         onClick={onClose}
       />
 
-      {/* 2. Sliding Panel */}
+      {/*
+        2. Sliding Panel
+
+        Anchored with left AND right rather than w-full. The panel is inset from
+        the left to clear the sidebar, so a full-viewport width pushed its right
+        edge 64px off screen on a phone — taking most of the theme toggle, which
+        sits at that edge, with it. max-w-md still caps the width on desktop.
+      */}
       <div
-        className={`fixed top-0 left-16 md:left-20 h-full w-full max-w-md bg-white dark:bg-gray-900 z-50 shadow-2xl transform transition-transform duration-300 ease-in-out border-r border-gray-100 dark:border-gray-800 flex flex-col ${
+        className={`fixed top-0 left-16 right-0 md:left-20 h-full max-w-md bg-white dark:bg-gray-900 z-50 shadow-2xl transform transition-transform duration-300 ease-in-out border-r border-gray-100 dark:border-gray-800 flex flex-col ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

@@ -5,6 +5,9 @@ import {
   Globe,
   Workflow,
   Github,
+  Smartphone,
+  Wrench,
+  Lock,
 } from 'lucide-react';
 
 interface ProjectItem {
@@ -13,12 +16,40 @@ interface ProjectItem {
   description: string;
   bullets: string[];
   stack: string[];
-  liveUrl: string;
-  liveLabel: string;
+  /* Absent for pre-launch client work, which has nothing public to link to. */
+  liveUrl?: string;
+  liveLabel?: string;
   icon: React.ElementType;
 }
 
 const projects: ProjectItem[] = [
+  {
+    name: 'Cross-Platform Mobile & Web Platform',
+    tagline: 'Client work · pre-launch',
+    description:
+      'A three-surface product for a UK vehicle storage company: a customer app for iOS and Android in React Native, a companion web portal in Next.js, and an internal admin panel, all against a REST API. I led frontend across all three and built the app\'s auth layer.',
+    bullets: [
+      'JWT access and refresh tokens held in the device keychain',
+      'Single-flight refresh so concurrent expired requests share one retry',
+      'Biometric session unlock',
+      'Trusted-device sign-in',
+    ],
+    stack: ['React Native', 'Next.js', 'TypeScript', 'Expo Router', 'TanStack Query', 'Zustand'],
+    icon: Smartphone,
+  },
+  {
+    name: 'AI Home Repair Diagnosis App',
+    tagline: 'Client work · pre-launch',
+    description:
+      'A React Native app for iOS and Android where users photograph a household problem and get ranked candidate diagnoses with safety warnings and an in-app assistant. I was the only engineer on it — the full mobile surface plus the Supabase backend.',
+    bullets: [
+      'Anonymous per-device identity model enforced through row-level security instead of user accounts',
+      'Reserve-and-settle quota system that rate-limits AI calls per device on hashed identifiers',
+      '390 automated tests across client and backend',
+    ],
+    stack: ['React Native', 'Supabase', 'PostgreSQL', 'TypeScript', 'Deno Edge Functions'],
+    icon: Wrench,
+  },
   {
     name: 'NOVOSOLS',
     tagline: 'Next.js Web Application',
@@ -83,8 +114,8 @@ const Projects: React.FC = () => {
             Selected Work
           </h1>
           <p className="mt-6 text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
-            Front ends shipped for real clients — Next.js and React applications running in
-            production, plus the automation work that supports them.
+            Mobile and web work for real clients — React Native apps for iOS and Android,
+            Next.js applications, and the automation behind them.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <a
@@ -151,15 +182,24 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
 
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
-                >
-                  {project.liveLabel}
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
+                  >
+                    {project.liveLabel}
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                ) : (
+                  /* Nothing to link to yet — say so plainly rather than
+                     rendering a dead link or an empty gap. */
+                  <span className="inline-flex items-center gap-2 font-mono text-sm text-gray-500 dark:text-gray-400">
+                    <Lock className="w-4 h-4" />
+                    Not yet public
+                  </span>
+                )}
               </div>
             </article>
           ))}

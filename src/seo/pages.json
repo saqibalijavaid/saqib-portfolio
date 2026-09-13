@@ -21,8 +21,8 @@
     },
     "/projects": {
       "title": "Selected Work — Saqib Ali Javaid",
-      "description": "Frontend and mobile work shipped for real clients — Next.js and React applications in production, plus automation systems running quietly in the background.",
-      "ogDescription": "Next.js and React applications shipped for real clients, in production."
+      "description": "Mobile and web work shipped for real clients — React Native apps for iOS and Android, Next.js applications in production, and the automation behind them.",
+      "ogDescription": "React Native apps and Next.js applications shipped for real clients."
     },
     "/about": {
       "title": "About — Saqib Ali Javaid",

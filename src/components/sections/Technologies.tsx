@@ -85,7 +85,7 @@ const Technologies: React.FC = () => {
         </p>
         <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto font-mono text-sm">
           // Frontend first — React Native, React and Next.js, with the backend and automation
-          // tooling to ship end to end.
+          tooling to ship end to end.
         </p>
       </div>
 

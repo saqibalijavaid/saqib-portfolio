@@ -96,7 +96,7 @@ const buildHead = (path, page) => {
     <meta name="theme-color" content="#111827" />
 
     <meta property="og:site_name" content="${attr(seo.siteName)}" />
-    <meta property="og:type" content="${path === '/' ? 'profile' : 'website'}" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="${attr(url)}" />
     <meta property="og:title" content="${attr(page.title)}" />
     <meta property="og:description" content="${attr(social)}" />

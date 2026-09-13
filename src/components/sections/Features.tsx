@@ -12,22 +12,22 @@ interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
-    name: 'ZEFTON',
-    tagline: 'E-Commerce Platform',
-    description:
-      'Full-stack MERN e-commerce platform with user authentication, product listings, cart management, and order handling. Dynamic routing and responsive UI.',
-    stack: ['MongoDB', 'Express', 'React', 'Node.js'],
-    liveUrl: 'https://zefton.vercel.app',
-    icon: ShoppingCart,
-  },
-  {
     name: 'NOVOSOLS',
-    tagline: 'Tech Startup Website',
+    tagline: 'Next.js Web Application',
     description:
-      'Dynamic startup site with separate user and admin panels. Responsive Next.js frontend + Express backend and a fully functional admin dashboard to manage content.',
-    stack: ['Next.js', 'Express', 'MongoDB', 'Tailwind'],
+      'Responsive Next.js frontend with server-side rendering and a Tailwind design system, plus a full admin dashboard letting the team manage every piece of site content without touching code.',
+    stack: ['Next.js', 'React', 'Tailwind', 'Express'],
     liveUrl: 'https://novosols.com',
     icon: Globe,
+  },
+  {
+    name: 'ZEFTON',
+    tagline: 'React E-Commerce Platform',
+    description:
+      'Production e-commerce front end built in React — product catalog with dynamic routing and filtering, cart and checkout flow, and a responsive UI wired to REST APIs.',
+    stack: ['React', 'Node.js', 'Express', 'MongoDB'],
+    liveUrl: 'https://zefton.vercel.app',
+    icon: ShoppingCart,
   },
   {
     name: 'AI Outreach Automation',
@@ -53,7 +53,7 @@ const Features: React.FC = () => {
             Things I've built
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-            Shipped projects — live, in production, solving real problems for real users.
+            Shipped front ends — live, in production, used by real people.
           </p>
         </div>
 

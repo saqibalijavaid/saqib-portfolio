@@ -12,19 +12,27 @@ import {
   Braces,
   GitBranch,
   Mail,
+  Smartphone,
 } from 'lucide-react';
 
+/*
+ * Ordered by what the work actually leads with. Mobile and web sit first,
+ * backend and automation follow as supporting capability.
+ *
+ * React Native was missing from this list even though the Barq Dev entry in the
+ * experience section already describes building mobile apps with it — adding it
+ * is correcting an omission, not making a new claim.
+ */
 const techStack = [
-  // Languages
-  { name: 'JavaScript', icon: Braces, type: 'Lang' },
-  { name: 'TypeScript', icon: Code, type: 'Lang' },
-  { name: 'Python', icon: FileCode, type: 'Lang' },
-  { name: 'Kotlin', icon: Code, type: 'Lang' },
+  // Mobile
+  { name: 'React Native', icon: Smartphone, type: 'Mobile' },
 
   // Frontend
   { name: 'React', icon: Layers, type: 'Web' },
   { name: 'Next.js', icon: Terminal, type: 'Web' },
+  { name: 'TypeScript', icon: Code, type: 'Web' },
   { name: 'Tailwind CSS', icon: Layers, type: 'Web' },
+  { name: 'JavaScript', icon: Braces, type: 'Web' },
 
   // Backend
   { name: 'Node.js', icon: Server, type: 'Backend' },
@@ -32,6 +40,10 @@ const techStack = [
   { name: 'FastAPI', icon: Server, type: 'Backend' },
   { name: 'Flask', icon: Server, type: 'Backend' },
   { name: 'Django', icon: Server, type: 'Backend' },
+
+  // Languages
+  { name: 'Python', icon: FileCode, type: 'Lang' },
+  { name: 'Kotlin', icon: Code, type: 'Lang' },
 
   // Data & DevOps
   { name: 'MongoDB', icon: Database, type: 'Data' },
@@ -72,7 +84,8 @@ const Technologies: React.FC = () => {
           Tools I work with daily
         </p>
         <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto font-mono text-sm">
-          // From MERN apps to automation pipelines — a pragmatic stack for shipping real products.
+          // Frontend first — React Native, React and Next.js, with the backend and automation
+          // tooling to ship end to end.
         </p>
       </div>
 

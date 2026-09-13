@@ -20,7 +20,7 @@ const CTA: React.FC = () => {
           <span className="block text-gray-800">Let's build something together.</span>
         </h2>
         <p className="mt-4 text-lg leading-6 text-gray-800">
-          Available for freelance work and full-stack engineering. Usually reply within 24 hours.
+          Open to remote frontend roles and freelance work. Usually reply within 24 hours.
         </p>
         <div className="mt-8 flex justify-center gap-4">
           {/* Inverts the hero button — amber on dark there, dark on amber here. */}

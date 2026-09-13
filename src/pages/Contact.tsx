@@ -79,8 +79,8 @@ const Contact: React.FC = () => {
             Let's talk.
           </h1>
           <p className="mt-4 text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            Whether it's a full-stack build or an automation you've been meaning to ship — send a
-            message and I'll reply within 24 hours.
+            Open to remote frontend roles, and to freelance React Native, React and Next.js
+            work. Send a message and I'll reply within 24 hours.
           </p>
         </div>
 

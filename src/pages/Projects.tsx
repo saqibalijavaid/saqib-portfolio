@@ -20,36 +20,36 @@ interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
-    name: 'ZEFTON',
-    tagline: 'Full-Stack E-Commerce Platform',
-    description:
-      'A production e-commerce platform built collaboratively with the MERN stack. End-to-end shopping experience from browsing to checkout.',
-    bullets: [
-      'User authentication with secure session handling',
-      'Product catalog with dynamic routing and filtering',
-      'Cart management and order processing flow',
-      'Responsive UI with integrated REST APIs',
-    ],
-    stack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Git'],
-    liveUrl: 'https://zefton.vercel.app',
-    liveLabel: 'Visit live site',
-    icon: ShoppingCart,
-  },
-  {
     name: 'NOVOSOLS',
-    tagline: 'Tech Startup Website',
+    tagline: 'Next.js Web Application',
     description:
-      'A dynamic startup website featuring separate user and admin panels. The admin dashboard lets the team manage all website content without touching code.',
+      'A production web application with separate user and admin experiences. The admin dashboard lets the team manage every piece of site content without touching code.',
     bullets: [
-      'Responsive Next.js frontend with SSR',
-      'Express.js backend with secure data handling',
+      'Responsive Next.js frontend with server-side rendering',
+      'Tailwind CSS design system across both panels',
       'Fully functional admin dashboard for content management',
-      'Tailwind CSS design system',
+      'Express.js backend with secure data handling',
     ],
-    stack: ['Next.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+    stack: ['Next.js', 'React', 'Tailwind CSS', 'Express.js', 'MongoDB'],
     liveUrl: 'https://novosols.com',
     liveLabel: 'Visit live site',
     icon: Globe,
+  },
+  {
+    name: 'ZEFTON',
+    tagline: 'React E-Commerce Platform',
+    description:
+      'A production e-commerce front end built collaboratively in React. End-to-end shopping experience from browsing to checkout.',
+    bullets: [
+      'Product catalog with dynamic routing and filtering',
+      'Cart management and order processing flow',
+      'Responsive UI wired to REST APIs',
+      'User authentication with secure session handling',
+    ],
+    stack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Git'],
+    liveUrl: 'https://zefton.vercel.app',
+    liveLabel: 'Visit live site',
+    icon: ShoppingCart,
   },
   {
     name: 'AI Outreach Automation',
@@ -83,8 +83,8 @@ const Projects: React.FC = () => {
             Selected Work
           </h1>
           <p className="mt-6 text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
-            Real projects shipped for real clients — full-stack apps, automation pipelines,
-            and systems quietly running in the background while businesses grow.
+            Front ends shipped for real clients — Next.js and React applications running in
+            production, plus the automation work that supports them.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <a

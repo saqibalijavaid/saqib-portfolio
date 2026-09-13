@@ -2,10 +2,10 @@
   "siteUrl": "https://saqibalijavaid.me",
   "siteName": "Saqib Ali Javaid",
   "ogImage": "/og-image.jpg",
-  "ogImageAlt": "Saqib Ali Javaid — Full-Stack & Automation Engineer",
+  "ogImageAlt": "Saqib Ali Javaid — Frontend Engineer",
   "twitterHandle": "@saqibalijavaid",
   "personName": "Saqib Ali Javaid",
-  "jobTitle": "Full-Stack Developer & Automation Engineer",
+  "jobTitle": "Frontend Engineer",
   "location": "Lahore, Pakistan",
   "email": "saqibalijavaid2@gmail.com",
   "sameAs": [
@@ -15,24 +15,24 @@
   ],
   "pages": {
     "/": {
-      "title": "Saqib Ali Javaid — Full-Stack & Automation Engineer",
-      "description": "Full-stack developer and automation engineer in Lahore, Pakistan. I build MERN apps, REST APIs and AI-powered workflows that save hours of manual work.",
-      "ogDescription": "I build MERN apps, REST APIs and AI-powered workflows that save hours of manual work."
+      "title": "Saqib Ali Javaid — Frontend Engineer",
+      "description": "Frontend engineer building mobile and web apps with React Native, React and Next.js. Based in Lahore, Pakistan, open to remote frontend roles.",
+      "ogDescription": "Frontend engineer building mobile and web apps with React Native, React and Next.js."
     },
     "/projects": {
       "title": "Selected Work — Saqib Ali Javaid",
-      "description": "Real projects shipped for real clients — full-stack applications, automation pipelines and systems quietly running in the background while businesses grow.",
-      "ogDescription": "Full-stack applications, automation pipelines and systems shipped for real clients."
+      "description": "Frontend and mobile work shipped for real clients — Next.js and React applications in production, plus automation systems running quietly in the background.",
+      "ogDescription": "Next.js and React applications shipped for real clients, in production."
     },
     "/about": {
       "title": "About — Saqib Ali Javaid",
-      "description": "I'm Saqib, a full-stack developer and automation engineer in Lahore. I help coaches, consultants and small businesses build systems that save time.",
-      "ogDescription": "Full-stack developer and automation engineer helping small businesses build systems that save time."
+      "description": "I'm Saqib, a frontend engineer in Lahore building mobile apps with React Native and web apps with React and Next.js. Open to remote frontend roles.",
+      "ogDescription": "Frontend engineer building mobile apps with React Native and web apps with React and Next.js."
     },
     "/contact": {
       "title": "Contact — Saqib Ali Javaid",
-      "description": "Whether it's a full-stack build or an automation you've been meaning to ship — send a message and I'll reply within 24 hours.",
-      "ogDescription": "Send a message about your build or automation — I reply within 24 hours."
+      "description": "Open to remote frontend roles and freelance work. Send a message about a React Native, React or Next.js build and I'll reply within 24 hours.",
+      "ogDescription": "Open to remote frontend roles. Send a message and I'll reply within 24 hours."
     }
   }
 }

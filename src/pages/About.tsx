@@ -72,15 +72,15 @@ const About: React.FC = () => {
             About Me
           </span>
           <h1 className="font-display font-normal text-5xl md:text-7xl text-gray-900 dark:text-white mb-8 leading-[0.95] max-w-5xl mx-auto">
-            Building in public — <br />
+            I build the parts <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-200">
-              the wins, fails &amp; everything between.
+              people actually touch.
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
-            I'm Saqib — a full-stack developer and automation engineer based in Lahore, Pakistan.
-            I help coaches, consultants, small businesses, and startups build systems that generate
-            leads, save time, and grow revenue.
+            I'm Saqib — a frontend engineer based in Lahore, Pakistan. I build mobile
+            applications with React Native and web applications with React and Next.js, and I'm
+            open to remote frontend roles.
           </p>
         </div>
       </div>
@@ -142,7 +142,7 @@ const About: React.FC = () => {
               <div className="text-sm font-mono text-gray-500 uppercase tracking-wider">Avg Client Rating</div>
             </div>
             <div>
-              <div className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">MERN</div>
+              <div className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">React</div>
               <div className="text-sm font-mono text-gray-500 uppercase tracking-wider">Primary Stack</div>
             </div>
           </div>

@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
               cannot share a row with an image without one of them overflowing.
             */}
             <h1 className="font-display font-normal text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-gray-900 dark:text-white leading-[0.85] mb-8">
-              Software <br />
+              Frontend <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-800 dark:from-accent-400 dark:to-accent-200">
                 Engineer.
               </span>
@@ -42,8 +42,8 @@ const Hero: React.FC = () => {
 
             <div className="max-w-2xl mb-10">
               <p className="font-mono text-lg md:text-xl text-gray-500 dark:text-gray-400 leading-relaxed">
-                // Full-stack developer and automation engineer. I build MERN apps, REST APIs,
-                and AI-powered workflows that save hours of manual work.
+                // Frontend engineer building mobile and web apps with React Native, React
+                and Next.js. Open to remote roles.
               </p>
             </div>
 

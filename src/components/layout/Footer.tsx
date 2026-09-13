@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
               Saqib Ali Javaid<span className="text-gray-900 dark:text-white">.</span>
             </span>
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 max-w-md">
-              Full-stack software engineer and automation specialist based in Lahore. Building
-              MERN apps and AI-powered workflows that save hours of manual work.
+              Frontend engineer based in Lahore. Building mobile apps with React Native and
+              web apps with React and Next.js. Open to remote roles.
             </p>
           </div>
 

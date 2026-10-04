@@ -146,7 +146,7 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">2+</div>
+              <div className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">1.5+</div>
               <div className="text-sm font-mono text-gray-500 uppercase tracking-wider">Years Experience</div>
             </div>
             <div>

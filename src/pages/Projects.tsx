@@ -96,12 +96,27 @@ const Projects: React.FC = () => {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 ) : (
-                  /* Nothing to link to yet — say so plainly rather than
-                     rendering a dead link or an empty gap. */
-                  <span className="inline-flex items-center gap-2 font-mono text-sm text-gray-500 dark:text-gray-400">
-                    <Lock className="w-4 h-4" />
-                    Not yet public
-                  </span>
+                  /* Nothing of Saqib's to link to yet — say so plainly rather
+                     than rendering a dead link or an empty gap. A reference
+                     sits beside that marker, never in place of it, so a site
+                     someone else built can never read as the work itself. */
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                    <span className="inline-flex items-center gap-2 font-mono text-sm text-gray-500 dark:text-gray-400">
+                      <Lock className="w-4 h-4" />
+                      Apps not yet public
+                    </span>
+                    {project.reference && (
+                      <a
+                        href={project.reference.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
+                      >
+                        {project.reference.label}
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </article>

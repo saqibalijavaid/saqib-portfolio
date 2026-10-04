@@ -37,6 +37,13 @@ export interface Project {
   featuredStack: string[];
   liveUrl?: string;
   liveLabel?: string;
+  /*
+   * Something related that Saqib did not build — currently the client's own
+   * marketing site. Deliberately separate from liveUrl so it never reads as
+   * "here is my work": a project with only a reference still shows as
+   * unreleased on both surfaces.
+   */
+  reference?: { url: string; label: string };
   icon: LucideIcon;
 }
 
@@ -56,6 +63,8 @@ export const projects: Project[] = [
     ],
     stack: ['React Native', 'Next.js', 'TypeScript', 'Expo Router', 'TanStack Query', 'Zustand'],
     featuredStack: ['React Native', 'Next.js', 'TypeScript', 'Expo Router'],
+    liveUrl: 'https://app.garagequeens.co.uk',
+    liveLabel: 'Visit the web portal',
     icon: Smartphone,
   },
   {
@@ -74,15 +83,18 @@ export const projects: Project[] = [
     ],
     stack: ['React Native', 'Supabase', 'PostgreSQL', 'TypeScript', 'Deno Edge Functions'],
     featuredStack: ['React Native', 'Supabase', 'PostgreSQL', 'TypeScript'],
+    /* The apps are the work here; homeflashpro.com is the client's own
+       marketing site, built by someone else. Hence reference, not liveUrl. */
+    reference: { url: 'https://homeflashpro.com', label: "See the product site" },
     icon: Wrench,
   },
   {
     name: 'Julian Varel',
     tagline: 'Barq Dev · brand site & portal',
     summary:
-      'A multilingual EN/DE/FR Next.js brand site built at Barq Dev, with a hand-written reveal engine and no animation library, plus a two-role client portal with argon2id auth and server-enforced RBAC.',
+      'A multilingual EN/DE/FR Next.js brand site built at Barq Dev, with a hand-written reveal engine and no animation library, plus a two-role private client portal with argon2id auth and server-enforced RBAC.',
     description:
-      'A private luxury brand site and the client portal behind it, built at Barq Dev. The public site is a multilingual Next.js build with route-based i18n across English, German and French, and a reveal engine written by hand on IntersectionObserver rather than pulled in from a library. The portal is a separate two-role application built end to end.',
+      'A luxury brand site and the private client portal behind it, built at Barq Dev. The public site is a multilingual Next.js build with route-based i18n across English, German and French, and a reveal engine written by hand on IntersectionObserver rather than pulled in from a library. The portal is a separate two-role application built end to end.',
     bullets: [
       'Route-based i18n across English, German and French',
       'Hand-written IntersectionObserver reveal engine — no animation library, no CSS framework',
@@ -91,6 +103,10 @@ export const projects: Project[] = [
     ],
     stack: ['Next.js', 'React', 'Vite', 'Express.js', 'PostgreSQL', 'TypeScript'],
     featuredStack: ['Next.js', 'React', 'Express.js', 'PostgreSQL'],
+    /* The brand site only. The portal is behind a client login, so it is
+       described but not linked. */
+    liveUrl: 'https://julianvarel.com',
+    liveLabel: 'Visit live site',
     icon: Gem,
   },
   {

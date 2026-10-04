@@ -5,6 +5,7 @@ import {
   Smartphone,
   Workflow,
   Wrench,
+  Zap,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -50,6 +51,12 @@ export interface Project {
    * them — this states what is coming rather than what is missing.
    */
   pendingRelease?: string;
+  /*
+   * Neutral context for work that is neither linkable nor on the way — a site
+   * that has since been replaced, say. Grey rather than amber: it explains an
+   * absence instead of promising something.
+   */
+  note?: string;
   icon: LucideIcon;
 }
 
@@ -122,6 +129,25 @@ export const projects: Project[] = [
     icon: Gem,
   },
   {
+    name: 'Services Hub',
+    tagline: 'Next.js & Supabase · local business',
+    summary:
+      'A conversion-focused site for a Lahore electrical services business. Next.js front end on Supabase, with a request form that turns a visitor with a tripping breaker into a booked job.',
+    description:
+      'A lead-generation site for an electrical services business operating across Lahore, built in Next.js on Supabase. Every decision on the page serves one goal: turning someone with a broken fan or a dead distribution board into a booked visit, without making them phone a stranger first.',
+    bullets: [
+      'Service request form capturing job type, address and timing, straight into Supabase',
+      'WhatsApp handoff for the reply, which is how this market actually books work',
+      'Full service catalogue — wiring, distribution boards, UPS and inverters, solar, CCTV',
+      'Local SEO targeting Lahore by neighbourhood: DHA, Gulberg, Model Town, Bahria Town',
+    ],
+    stack: ['Next.js', 'React', 'Supabase', 'PostgreSQL'],
+    featuredStack: ['Next.js', 'React', 'Supabase'],
+    liveUrl: 'https://serviceshub.site',
+    liveLabel: 'Visit live site',
+    icon: Zap,
+  },
+  {
     name: 'NOVOSOLS',
     tagline: 'Next.js Web Application',
     summary:
@@ -136,8 +162,9 @@ export const projects: Project[] = [
     ],
     stack: ['Next.js', 'React', 'Tailwind CSS', 'Express.js', 'MongoDB'],
     featuredStack: ['Next.js', 'React', 'Tailwind', 'Express'],
-    liveUrl: 'https://novosols.com',
-    liveLabel: 'Visit live site',
+    /* No link: novosols.com now serves an entirely different business, so the
+       URL would show a visitor someone else's site under Saqib's name. */
+    note: 'The original site has since been replaced',
     icon: Globe,
   },
   {

@@ -124,10 +124,10 @@ const Projects: React.FC = () => {
                     </span>
                   )}
 
-                  {!project.liveUrl && !project.reference && !project.pendingRelease && (
+                  {project.note && (
                     <span className="inline-flex items-center gap-2 font-mono text-sm text-gray-500 dark:text-gray-400">
-                      <Lock className="w-4 h-4" />
-                      Not yet public
+                      <Lock className="w-4 h-4" aria-hidden="true" />
+                      {project.note}
                     </span>
                   )}
                 </div>

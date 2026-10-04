@@ -50,7 +50,8 @@ const FeaturedWork: React.FC = () => {
                   {project.liveUrl ? (
                     <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors" />
                   ) : (
-                    !project.pendingRelease && (
+                    !project.pendingRelease &&
+                    !project.note && (
                       <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
                         Pre-launch
                       </span>
@@ -72,6 +73,12 @@ const FeaturedWork: React.FC = () => {
                   <p className="mb-4 inline-flex items-center gap-2 self-start rounded-full border border-accent-500/30 bg-accent-500/10 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-700 dark:text-accent-400">
                     <Rocket className="h-3 w-3" aria-hidden="true" />
                     {project.pendingRelease}
+                  </p>
+                )}
+
+                {project.note && (
+                  <p className="mb-4 font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    {project.note}
                   </p>
                 )}
 

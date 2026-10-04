@@ -75,18 +75,6 @@
   --color-accent-900: #78350f;
   --color-accent-950: #451a03;
 
-  /* Define the animation keyframes */
-  --animate-infinite-scroll: infinite-scroll 60s linear infinite;
-
-  @keyframes infinite-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-
   /*
    * Hero entrance. `animate-fade-in-up` was already used in Hero.tsx but was
    * never defined here, so it compiled to nothing and the element simply
@@ -107,23 +95,12 @@
 }
 
 /*
- * Pauses an animation. Tailwind has no `animation-play-state` utility, so the
- * `group-hover:paused` already on the marquee rows compiled to nothing and they
- * never actually stopped. Registered with @utility rather than a plain class so
- * variants like group-hover: still apply to it.
- */
-@utility paused {
-  animation-play-state: paused;
-}
-
-/*
- * WCAG 2.2.2 (Pause, Stop, Hide). The tech marquee moves indefinitely, so
- * anyone who has asked their OS for reduced motion gets it stopped outright
- * rather than merely slowed. Hover-pause above is not enough on its own: the
- * badges are not focusable, so there is no keyboard equivalent.
+ * Honour an OS-level request for reduced motion. The tech marquee that forced
+ * this is gone — it is a static grid now — but the hero entrance and the status
+ * pulse on /about remain, and neither should run for someone who has asked for
+ * stillness.
  */
 @media (prefers-reduced-motion: reduce) {
-  .animate-infinite-scroll,
   .animate-fade-in-up,
   .animate-pulse {
     animation: none;

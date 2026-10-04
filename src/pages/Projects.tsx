@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Lock } from 'lucide-react';
+import { ExternalLink, Github, Lock, Rocket } from 'lucide-react';
 import { projects } from '../data/projects';
 
 const Projects: React.FC = () => {
@@ -85,39 +85,52 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
 
-                {project.liveUrl ? (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
-                  >
-                    {project.liveLabel}
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                ) : (
-                  /* Nothing of Saqib's to link to yet — say so plainly rather
-                     than rendering a dead link or an empty gap. A reference
-                     sits beside that marker, never in place of it, so a site
-                     someone else built can never read as the work itself. */
-                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                {/*
+                  One row holding whatever is true of this project: a link to
+                  the shipped surface, a reference to something Saqib did not
+                  build, a release note for apps still on the way. A reference
+                  never substitutes for a link, and the lock only appears when
+                  there is genuinely nothing else to say.
+                */}
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
+                    >
+                      {project.liveLabel}
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+
+                  {project.reference && (
+                    <a
+                      href={project.reference.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
+                    >
+                      {project.reference.label}
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+
+                  {project.pendingRelease && (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-accent-500/30 bg-accent-500/10 px-3 py-1 font-mono text-xs uppercase tracking-wider text-accent-700 dark:text-accent-400">
+                      <Rocket className="w-3.5 h-3.5" aria-hidden="true" />
+                      {project.pendingRelease}
+                    </span>
+                  )}
+
+                  {!project.liveUrl && !project.reference && !project.pendingRelease && (
                     <span className="inline-flex items-center gap-2 font-mono text-sm text-gray-500 dark:text-gray-400">
                       <Lock className="w-4 h-4" />
-                      Apps not yet public
+                      Not yet public
                     </span>
-                    {project.reference && (
-                      <a
-                        href={project.reference.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-semibold text-accent-700 dark:text-accent-400 hover:underline"
-                      >
-                        {project.reference.label}
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </article>
           ))}

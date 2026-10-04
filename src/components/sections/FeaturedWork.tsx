@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Rocket } from 'lucide-react';
 import { projects } from '../../data/projects';
 
 const FeaturedWork: React.FC = () => {
@@ -43,12 +43,18 @@ const FeaturedWork: React.FC = () => {
                   <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-accent-500 text-gray-950 group-hover:scale-110 transition-transform duration-300">
                     <project.icon className="h-6 w-6" strokeWidth={1.75} />
                   </div>
+                  {/* The grey Pre-launch pill is only for work with nothing to
+                      show at all. Anything with apps on the way says so in the
+                      release line below instead, which reads as momentum rather
+                      than as an absence. */}
                   {project.liveUrl ? (
                     <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors" />
                   ) : (
-                    <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
-                      Pre-launch
-                    </span>
+                    !project.pendingRelease && (
+                      <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
+                        Pre-launch
+                      </span>
+                    )
                   )}
                 </div>
 
@@ -61,6 +67,13 @@ const FeaturedWork: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed flex-grow mb-6">
                   {project.summary}
                 </p>
+
+                {project.pendingRelease && (
+                  <p className="mb-4 inline-flex items-center gap-2 self-start rounded-full border border-accent-500/30 bg-accent-500/10 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-700 dark:text-accent-400">
+                    <Rocket className="h-3 w-3" aria-hidden="true" />
+                    {project.pendingRelease}
+                  </p>
+                )}
 
                 <div className="flex flex-wrap gap-2">
                   {project.featuredStack.map((tech) => (

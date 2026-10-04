@@ -44,6 +44,12 @@ export interface Project {
    * unreleased on both surfaces.
    */
   reference?: { url: string; label: string };
+  /*
+   * For work where the mobile apps are built but not yet in the stores. Both
+   * of these ship a live web surface already, so "not yet public" undersold
+   * them — this states what is coming rather than what is missing.
+   */
+  pendingRelease?: string;
   icon: LucideIcon;
 }
 
@@ -65,6 +71,7 @@ export const projects: Project[] = [
     featuredStack: ['React Native', 'Next.js', 'TypeScript', 'Expo Router'],
     liveUrl: 'https://app.garagequeens.co.uk',
     liveLabel: 'Visit the web portal',
+    pendingRelease: 'iOS and Android apps launching soon',
     icon: Smartphone,
   },
   {
@@ -85,7 +92,8 @@ export const projects: Project[] = [
     featuredStack: ['React Native', 'Supabase', 'PostgreSQL', 'TypeScript'],
     /* The apps are the work here; homeflashpro.com is the client's own
        marketing site, built by someone else. Hence reference, not liveUrl. */
-    reference: { url: 'https://homeflashpro.com', label: "See the product site" },
+    reference: { url: 'https://homeflashpro.com', label: 'See the product site' },
+    pendingRelease: 'iOS and Android apps launching soon',
     icon: Wrench,
   },
   {

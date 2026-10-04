@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Lock, Rocket } from 'lucide-react';
+import { ArrowRight, ExternalLink, Github, Lock, Rocket } from 'lucide-react';
 import { projects } from '../data/projects';
 
 const Projects: React.FC = () => {
@@ -62,12 +62,20 @@ const Projects: React.FC = () => {
 
                 <ul className="space-y-2 mb-6">
                   {project.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex items-start text-gray-600 dark:text-gray-400"
-                    >
-                      <span className="text-accent-700 dark:text-accent-400 font-mono mr-3 mt-1">
-                        →
+                    <li key={bullet} className="flex gap-3 text-gray-600 dark:text-gray-400">
+                      {/*
+                        The marker was a mono "→" glyph nudged down with mt-1.
+                        Two fonts with different vertical metrics plus a guessed
+                        offset never lines up — it sat visibly below the text.
+                        An icon has a predictable box, and h-6 is exactly one
+                        line of this text, so centring inside it puts the arrow
+                        on the first line's optical centre at any width.
+                      */}
+                      <span className="flex h-6 shrink-0 items-center">
+                        <ArrowRight
+                          className="h-4 w-4 text-accent-700 dark:text-accent-400"
+                          aria-hidden="true"
+                        />
                       </span>
                       <span>{bullet}</span>
                     </li>

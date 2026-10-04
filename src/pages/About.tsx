@@ -191,17 +191,19 @@ const About: React.FC = () => {
               {certifications.map((cert) => (
                 <li
                   key={cert.name}
-                  className="bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-700"
+                  className="flex items-center justify-between gap-4 bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-100 dark:border-gray-700"
                 >
-                  <p className="font-semibold text-gray-900 dark:text-white">{cert.name}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 font-mono mt-1">
-                    {cert.org}
-                  </p>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-gray-900 dark:text-white">{cert.name}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-mono mt-1">
+                      {cert.org}
+                    </p>
+                  </div>
                   <a
                     href={cert.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-700 dark:text-accent-400 hover:underline"
+                    className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-700 dark:text-accent-400 hover:underline"
                   >
                     {/* Names the credential, so a screen reader hearing the
                         links out of context does not get two identical

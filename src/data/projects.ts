@@ -43,11 +43,11 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'Garage Queens',
-    tagline: 'Client work · iOS, Android & web',
+    tagline: 'Barq Dev · iOS, Android & web',
     summary:
-      'A three-surface platform for a UK premium car storage company — a 64-route React Native app for iOS and Android, a companion Next.js web portal, and a staff admin panel. Led frontend across all three and built the auth layer.',
+      'A three-surface platform built at Barq Dev for a UK premium car storage company — a 64-route React Native app for iOS and Android, a companion Next.js web portal, and a staff admin panel. Led frontend across all three and built the auth layer.',
     description:
-      'A three-surface management platform for a UK premium car storage company, built against a Django API. I led frontend across all three surfaces: a 64-route React Native customer app for iOS and Android at roughly 38k lines and 154 components, a companion Next.js web portal, and a staff admin panel.',
+      'A three-surface management platform built at Barq Dev for a UK premium car storage company, against a Django API. I led frontend across all three surfaces: a 64-route React Native customer app for iOS and Android at roughly 38k lines and 154 components, a companion Next.js web portal, and a staff admin panel.',
     bullets: [
       'JWT access and refresh tokens held in the device Keychain and Keystore',
       'Single-flight refresh interceptor, so concurrent 401s share one refresh rather than stampeding',
@@ -60,11 +60,11 @@ export const projects: Project[] = [
   },
   {
     name: 'HomeFlash',
-    tagline: 'Client work · iOS & Android',
+    tagline: 'Barq Dev · iOS & Android',
     summary:
-      'A React Native app where users photograph a household problem and get confidence-ranked diagnoses with safety warnings and an in-app assistant. Sole engineer across the mobile surface and the Supabase backend.',
+      'A React Native app built at Barq Dev where users photograph a household problem and get confidence-ranked diagnoses with safety warnings and an in-app assistant. Sole engineer across the mobile surface and the Supabase backend.',
     description:
-      'An AI home repair diagnosis app for iOS and Android. Users photograph a household problem and get confidence-ranked candidate diagnoses with safety warnings and an in-app assistant. I was the only engineer on it — 25 screens and 48 components, roughly 27k lines, plus the entire Supabase backend.',
+      'An AI home repair diagnosis app for iOS and Android, built at Barq Dev. Users photograph a household problem and get confidence-ranked candidate diagnoses with safety warnings and an in-app assistant. I was the only engineer on it — 25 screens and 48 components, roughly 27k lines, plus the entire Supabase backend.',
     bullets: [
       'Custom camera pipeline feeding a confidence-ranked diagnosis flow',
       'Anonymous per-device identity enforced through row-level security instead of user accounts',
@@ -78,11 +78,11 @@ export const projects: Project[] = [
   },
   {
     name: 'Julian Varel',
-    tagline: 'Client work · brand site & portal',
+    tagline: 'Barq Dev · brand site & portal',
     summary:
-      'A multilingual EN/DE/FR Next.js brand site with a hand-written reveal engine and no animation library, plus a two-role client portal with argon2id auth and server-enforced RBAC.',
+      'A multilingual EN/DE/FR Next.js brand site built at Barq Dev, with a hand-written reveal engine and no animation library, plus a two-role client portal with argon2id auth and server-enforced RBAC.',
     description:
-      'A private luxury brand site and the client portal behind it. The public site is a multilingual Next.js build with route-based i18n across English, German and French, and a reveal engine written by hand on IntersectionObserver rather than pulled in from a library. The portal is a separate two-role application built end to end.',
+      'A private luxury brand site and the client portal behind it, built at Barq Dev. The public site is a multilingual Next.js build with route-based i18n across English, German and French, and a reveal engine written by hand on IntersectionObserver rather than pulled in from a library. The portal is a separate two-role application built end to end.',
     bullets: [
       'Route-based i18n across English, German and French',
       'Hand-written IntersectionObserver reveal engine — no animation library, no CSS framework',

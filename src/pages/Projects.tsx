@@ -15,8 +15,8 @@ const Projects: React.FC = () => {
             Selected Work
           </h1>
           <p className="mt-6 text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
-            Mobile and web work for real clients — React Native apps for iOS and Android,
-            Next.js applications, and the automation behind them.
+            Client products built at Barq Dev, plus earlier independent work — React Native
+            apps for iOS and Android, Next.js applications, and the automation behind them.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <a

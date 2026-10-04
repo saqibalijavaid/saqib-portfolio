@@ -14,7 +14,8 @@ const FeaturedWork: React.FC = () => {
             Things I've built
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-            Mobile and web work for real clients, from pre-launch builds to live products.
+            Client products built at Barq Dev, plus earlier independent work — from
+            pre-launch builds to live products.
           </p>
         </div>
 

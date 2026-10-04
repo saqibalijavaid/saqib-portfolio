@@ -5,10 +5,8 @@ import { Zap, Target, Users, GraduationCap, Award, Link2 } from 'lucide-react';
 import { useTheme } from '../context/theme-context';
 
 const certifications = [
-  { name: 'Programming for Everybody (Getting Started with Python)', org: 'University of Michigan — Coursera' },
-  { name: 'AI For Everyone', org: 'DeepLearning.AI — Coursera' },
-  { name: 'Crafting Code with GitHub', org: 'Bit by Git workshop, by GDSC' },
-  { name: 'Introduction to Subagents', org: 'Certificate of Completion' },
+  { name: 'Claude Code in Action', org: 'Anthropic' },
+  { name: 'Introduction to Subagents', org: 'Anthropic' },
 ];
 
 const LinkedInBadge: React.FC = () => {

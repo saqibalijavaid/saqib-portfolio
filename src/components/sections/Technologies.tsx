@@ -3,9 +3,13 @@ import {
   Boxes,
   Braces,
   Code,
+  Container,
   Database,
+  FlaskConical,
+  GitBranch,
   Layers,
   Palette,
+  PenTool,
   RefreshCw,
   Route,
   Server,
@@ -37,6 +41,7 @@ const groups: { label: string; items: Tech[] }[] = [
     items: [
       { name: 'React Native', icon: Smartphone },
       { name: 'Expo Router', icon: Route },
+      { name: 'React Navigation', icon: Route },
     ],
   },
   {
@@ -58,7 +63,19 @@ const groups: { label: string; items: Tech[] }[] = [
       { name: 'Express.js', icon: Server },
       { name: 'Supabase', icon: Database },
       { name: 'PostgreSQL', icon: Database },
+      { name: 'Prisma', icon: Database },
       { name: 'MongoDB', icon: Database },
+    ],
+  },
+  {
+    label: 'Testing & tooling',
+    items: [
+      { name: 'Vitest', icon: FlaskConical },
+      { name: 'Playwright', icon: FlaskConical },
+      { name: 'Git', icon: GitBranch },
+      { name: 'GitHub Actions', icon: GitBranch },
+      { name: 'Docker', icon: Container },
+      { name: 'Figma', icon: PenTool },
     ],
   },
   {

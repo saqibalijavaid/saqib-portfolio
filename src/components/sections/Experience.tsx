@@ -11,12 +11,12 @@ interface ExperienceItem {
 
 const experience: ExperienceItem[] = [
   {
-    role: 'Software Engineer',
+    role: 'Software Engineer (React & React Native)',
     company: 'Barq Dev',
     period: 'Mar 2026 — Present',
     location: 'Lahore',
     description:
-      'Build mobile applications with React Native and web applications with React and Next.js. Collaborate with cross-functional teams to design, implement, and optimize software solutions using agile methodologies.',
+      'Own frontend delivery hands-on across three client products while directing the engineering team — setting technical direction, coordinating backend and QA, and running client requirement meetings, solo when needed.',
   },
   {
     role: 'Associate Software Engineer',
@@ -24,7 +24,7 @@ const experience: ExperienceItem[] = [
     period: 'May 2025 — Feb 2026',
     location: 'Lahore',
     description:
-      'Shipped full-stack applications with React, Flask, FastAPI, and SQL. Automated business development workflows with Selenium and cron jobs, significantly reducing manual effort.',
+      "Built the React frontend for an internal recruitment platform used by four role tiers — team member, team lead, admin and super admin — with nested permission scoping so each tier saw only its own reporting line's data. Maintained Python and Selenium scrapers across 25+ job boards feeding a daily pipeline, replacing over 15 hours of manual work a week.",
   },
   {
     role: 'Freelance Software Engineer',

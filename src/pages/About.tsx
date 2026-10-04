@@ -1,12 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
-import { Zap, Target, Users, GraduationCap, Award, Link2 } from 'lucide-react';
+import { Zap, Target, Users, GraduationCap, Award, Link2, ExternalLink } from 'lucide-react';
 import { useTheme } from '../context/theme-context';
 
 const certifications = [
-  { name: 'Claude Code in Action', org: 'Anthropic' },
-  { name: 'Introduction to Subagents', org: 'Anthropic' },
+  {
+    name: 'Claude Code in Action',
+    org: 'Anthropic',
+    verifyUrl: 'https://verify.skilljar.com/c/34ctspw2fo37',
+  },
+  {
+    name: 'Introduction to Subagents',
+    org: 'Anthropic',
+    verifyUrl: 'https://verify.skilljar.com/c/3ishmgbfifkw',
+  },
 ];
 
 const LinkedInBadge: React.FC = () => {
@@ -150,32 +158,36 @@ const About: React.FC = () => {
       {/* 4. EDUCATION + CERTIFICATIONS */}
       <div className="py-24 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
-          <div>
+          {/* Both columns are flex so the single Education card can grow to the
+              height the taller Certifications list sets, instead of stopping
+              short and leaving the row visibly lopsided. */}
+          <div className="flex flex-col">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-10 h-10 bg-accent-100 dark:bg-accent-900/30 rounded-lg flex items-center justify-center">
                 <GraduationCap className="text-accent-700 dark:text-accent-400 w-5 h-5" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h2>
             </div>
-            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+            <div className="flex-grow bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
               <p className="font-bold text-gray-900 dark:text-white">BS Computer Science</p>
               <p className="text-accent-700 dark:text-accent-400 font-semibold mt-1">
                 Punjab University College of Information and Technology (PUCIT)
               </p>
+              <p className="text-gray-500 dark:text-gray-400 mt-1">Lahore, Pakistan</p>
               <p className="text-gray-500 dark:text-gray-400 font-mono text-sm mt-2">
                 Dec 2022 — May 2026
               </p>
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
                 <Award className="text-purple-600 dark:text-purple-400 w-5 h-5" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Certifications</h2>
             </div>
-            <ul className="space-y-3">
+            <ul className="flex-grow space-y-3">
               {certifications.map((cert) => (
                 <li
                   key={cert.name}
@@ -185,6 +197,19 @@ const About: React.FC = () => {
                   <p className="text-sm text-gray-500 dark:text-gray-400 font-mono mt-1">
                     {cert.org}
                   </p>
+                  <a
+                    href={cert.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-700 dark:text-accent-400 hover:underline"
+                  >
+                    {/* Names the credential, so a screen reader hearing the
+                        links out of context does not get two identical
+                        "Verify" announcements. */}
+                    Verify
+                    <span className="sr-only"> {cert.name} certificate</span>
+                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                  </a>
                 </li>
               ))}
             </ul>

@@ -69,8 +69,12 @@ export const projects: Project[] = [
     ],
     stack: ['React Native', 'Next.js', 'TypeScript', 'Expo Router', 'TanStack Query', 'Zustand'],
     featuredStack: ['React Native', 'Next.js', 'TypeScript', 'Expo Router'],
-    liveUrl: 'https://app.garagequeens.co.uk',
-    liveLabel: 'Visit the web portal',
+    /*
+     * No link. app.garagequeens.co.uk redirects to /login, so the only thing a
+     * visitor following it would see is a password field — the sign-in screen
+     * is Saqib's work, but it demonstrates none of what the card describes.
+     * The release note carries this project on its own until the apps ship.
+     */
     pendingRelease: 'iOS and Android apps launching soon',
     icon: Smartphone,
   },

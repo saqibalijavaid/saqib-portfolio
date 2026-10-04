@@ -1,6 +1,10 @@
-# vistalabs-website
+# saqib-portfolio
 
-Official corporate website for VistaLabs.
+Personal portfolio for Saqib Ali Javaid — [saqibalijavaid.me](https://saqibalijavaid.me).
+
+React 19 + TypeScript + Vite + Tailwind CSS v4, deployed on Vercel. Routes are
+prerendered to static HTML at build time by `scripts/prerender.mjs` so each page
+ships with its own title, description and canonical.
 
 ## Development
 

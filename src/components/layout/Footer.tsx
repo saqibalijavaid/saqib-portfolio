@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, Code2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Code2, Check } from 'lucide-react';
+
+const EMAIL = 'saqibalijavaid2@gmail.com';
+
+type CopyState = 'idle' | 'copied' | 'failed';
 
 const Footer: React.FC = () => {
+  const [copyState, setCopyState] = useState<CopyState>('idle');
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  useEffect(() => () => clearTimeout(resetTimer.current), []);
+
+  /*
+   * writeText returns a promise. The previous version ignored it and fired an
+   * alert() immediately, so a blocked clipboard — plain HTTP, denied
+   * permissions — produced an unhandled rejection while still telling the
+   * visitor the copy had worked.
+   */
+  const copyEmail = async () => {
+    clearTimeout(resetTimer.current);
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopyState('copied');
+    } catch {
+      setCopyState('failed');
+    }
+    resetTimer.current = setTimeout(() => setCopyState('idle'), 2500);
+  };
+
   return (
     <footer className="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -88,17 +114,42 @@ const Footer: React.FC = () => {
               </a>
 
               <button
-                onClick={() => {
-                  navigator.clipboard.writeText('saqibalijavaid2@gmail.com');
-                  alert('Email copied to clipboard!');
-                }}
-                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors cursor-pointer"
-                aria-label="Copy email address"
-                title="Click to copy email"
+                onClick={copyEmail}
+                className={`transition-colors cursor-pointer ${
+                  copyState === 'copied'
+                    ? 'text-accent-700 dark:text-accent-400'
+                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300'
+                }`}
+                aria-label={`Copy email address, ${EMAIL}`}
+                title={copyState === 'copied' ? 'Copied' : 'Click to copy email'}
               >
-                <Mail className="h-6 w-6" />
+                {copyState === 'copied' ? (
+                  <Check className="h-6 w-6" />
+                ) : (
+                  <Mail className="h-6 w-6" />
+                )}
               </button>
             </div>
+
+            {/*
+              The icon swap above is visual only, so the outcome is announced
+              here too. Always rendered, so assistive tech has the live region
+              under observation before the text arrives. On failure it falls
+              back to showing the address, which is the thing the visitor
+              actually wanted.
+            */}
+            <p
+              role="status"
+              aria-live="polite"
+              className="mt-3 h-5 text-sm text-gray-500 dark:text-gray-400"
+            >
+              {copyState === 'copied' && 'Email copied.'}
+              {copyState === 'failed' && (
+                <span>
+                  Couldn&apos;t copy — <span className="font-mono">{EMAIL}</span>
+                </span>
+              )}
+            </p>
           </div>
         </div>
 

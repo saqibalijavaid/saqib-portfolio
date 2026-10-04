@@ -1,0 +1,86 @@
+name: CI
+
+# Vercel builds and deploys on push regardless. This runs the same checks
+# where the result is visible on the commit and on any pull request, so a
+# failure is attributable before it reaches a deployment.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint, typecheck and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      # `npm run build` typechecks, builds the client, builds the SSR entry and
+      # then prerenders. Running it whole is what catches the failures that
+      # matter — a type error, or a prerender that throws because the HTML
+      # shell changed underneath it.
+      - name: Build
+        run: npm run build
+
+      # A build can succeed and still ship empty pages if the prerender step
+      # silently misses its marker, which looks fine in a browser and is
+      # invisible to every other check. This asserts the output has content.
+      - name: Verify prerendered output
+        run: |
+          set -euo pipefail
+          for page in index projects/index about/index contact/index; do
+            file="dist/${page}.html"
+            [ -f "$file" ] || { echo "::error::$file was not generated"; exit 1; }
+
+            if grep -q '<div id="root"></div>' "$file"; then
+              echo "::error::$file has an empty root — prerender produced no markup"
+              exit 1
+            fi
+
+            count=$(grep -o '<h1' "$file" | wc -l | tr -d ' ')
+            [ "$count" = "1" ] || { echo "::error::$file has $count <h1> elements, expected 1"; exit 1; }
+
+            grep -q 'application/ld+json' "$file" || { echo "::error::$file has no JSON-LD"; exit 1; }
+
+            echo "ok  $file"
+          done
+
+          [ -f dist/sitemap.xml ] || { echo "::error::sitemap.xml was not generated"; exit 1; }
+          echo "ok  dist/sitemap.xml"
+
+      - name: Validate JSON-LD parses
+        run: |
+          node -e '
+            const fs = require("fs");
+            const pages = ["index", "projects/index", "about/index", "contact/index"];
+            for (const p of pages) {
+              const html = fs.readFileSync(`dist/${p}.html`, "utf8");
+              const m = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+              if (!m) throw new Error(`${p}: no JSON-LD block`);
+              const graph = JSON.parse(m[1].replace(/\\u003c/g, "<"));
+              if (!Array.isArray(graph["@graph"]) || graph["@graph"].length < 3) {
+                throw new Error(`${p}: @graph is missing or too small`);
+              }
+              console.log(`ok  ${p}: ${graph["@graph"].map((n) => n["@type"]).join(", ")}`);
+            }
+          '

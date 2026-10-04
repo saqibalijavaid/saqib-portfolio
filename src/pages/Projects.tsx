@@ -8,9 +8,12 @@ const Projects: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase text-sm mb-2">
+          {/* An eyebrow, not a heading. This was an <h2> sitting above the
+              <h1>, which inverts the document outline — the first heading a
+              crawler or screen reader met was a level-2 containing one word. */}
+          <p className="text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase text-sm mb-2">
             Projects
-          </h2>
+          </p>
           <h1 className="font-display font-normal text-5xl text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
             Selected Work
           </h1>
@@ -34,9 +37,13 @@ const Projects: React.FC = () => {
         {/* Project List — stacked cards */}
         <div className="space-y-12">
           {projects.map((project, index) => (
+            /* id matches the slug used by the CreativeWork @id in the page's
+               JSON-LD, so each structured-data entry resolves to a real
+               fragment — and the projects become linkable individually. */
             <article
               key={project.name}
-              className="group grid md:grid-cols-5 gap-8 p-8 md:p-10 bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 rounded-2xl hover:shadow-xl transition-all duration-300"
+              id={project.slug}
+              className="group grid md:grid-cols-5 gap-8 p-8 md:p-10 bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 rounded-2xl hover:shadow-xl transition-all duration-300 scroll-mt-8"
             >
               <div className="md:col-span-1">
                 {/* Dark glyph on amber: non-text contrast needs 3:1 and white

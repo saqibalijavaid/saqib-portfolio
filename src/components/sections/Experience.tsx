@@ -49,12 +49,13 @@ const Experience: React.FC = () => {
     <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center mb-12">
-          <h2 className="text-base text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase">
+          {/* Eyebrow as text, title as the heading — see Technologies.tsx. */}
+          <p className="text-base text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase">
             Experience
-          </h2>
-          <p className="mt-2 font-display font-normal text-4xl leading-tight text-gray-900 dark:text-white sm:text-5xl">
-            Where I've worked
           </p>
+          <h2 className="mt-2 font-display font-normal text-4xl leading-tight text-gray-900 dark:text-white sm:text-5xl">
+            Where I've worked
+          </h2>
         </div>
 
         <ol className="relative border-l-2 border-gray-200 dark:border-gray-700 ml-4">

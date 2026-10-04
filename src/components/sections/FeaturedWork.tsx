@@ -7,12 +7,13 @@ const FeaturedWork: React.FC = () => {
     <div className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center mb-12">
-          <h2 className="text-base text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase">
+          {/* Eyebrow as text, title as the heading — see Technologies.tsx. */}
+          <p className="text-base text-accent-700 dark:text-accent-400 font-semibold tracking-wide uppercase">
             Featured Work
-          </h2>
-          <p className="mt-2 font-display font-normal text-4xl leading-tight text-gray-900 dark:text-white sm:text-5xl">
-            Things I've built
           </p>
+          <h2 className="mt-2 font-display font-normal text-4xl leading-tight text-gray-900 dark:text-white sm:text-5xl">
+            Things I've built
+          </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
             Client products built at Barq Dev, plus earlier independent work — from
             pre-launch builds to live products.

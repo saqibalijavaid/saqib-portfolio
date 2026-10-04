@@ -1,38 +1,76 @@
 {
+  "_comment": "Per-route metadata. scripts/prerender.mjs bakes this into a static HTML file per route at build time; SeoSync.tsx re-applies it on client-side navigation. Titles are kept under ~60 characters and descriptions under ~160 so neither is truncated in a search result. ogDescription is shorter again, because social cards cut nearer 120.",
+
   "siteUrl": "https://saqibalijavaid.me",
   "siteName": "Saqib Ali Javaid",
   "ogImage": "/og-image.jpg",
-  "ogImageAlt": "Saqib Ali Javaid — Frontend Engineer",
+  "ogImageAlt": "Saqib Ali Javaid — Frontend Engineer, React Native and Next.js",
   "twitterHandle": "@saqibalijavaid",
   "personName": "Saqib Ali Javaid",
+  "givenName": "Saqib",
+  "familyName": "Javaid",
   "jobTitle": "Frontend Engineer",
+  "worksFor": "Barq Dev",
   "location": "Lahore, Pakistan",
   "email": "saqibalijavaid2@gmail.com",
+  "alumniOf": "Punjab University College of Information Technology (PUCIT)",
   "sameAs": [
     "https://github.com/saqibalijavaid",
     "https://www.linkedin.com/in/saqib-ali-javaid",
-    "https://x.com/saqibalijavaid"
+    "https://x.com/saqibalijavaid",
+    "https://leetcode.com/u/saqibalijavaid/"
   ],
+
+  "knowsAbout": [
+    "React Native",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Mobile App Development",
+    "iOS App Development",
+    "Android App Development",
+    "Expo",
+    "Tailwind CSS",
+    "TanStack Query",
+    "Zustand",
+    "Supabase",
+    "PostgreSQL",
+    "Node.js",
+    "Express.js",
+    "Web Accessibility",
+    "Web Performance",
+    "Frontend Architecture"
+  ],
+
   "pages": {
     "/": {
-      "title": "Saqib Ali Javaid — Frontend Engineer",
-      "description": "Frontend engineer building mobile and web apps with React Native, React and Next.js. Based in Lahore, Pakistan, open to remote frontend roles.",
-      "ogDescription": "Frontend engineer building mobile and web apps with React Native, React and Next.js."
+      "title": "Saqib Ali Javaid — React Native & Next.js Engineer",
+      "description": "Frontend engineer in Lahore building iOS and Android apps with React Native and web apps with React and Next.js. Open to remote frontend roles.",
+      "ogDescription": "Frontend engineer building iOS, Android and web apps with React Native, React and Next.js.",
+      "schemaType": "ProfilePage",
+      "breadcrumb": "Home"
     },
     "/projects": {
-      "title": "Selected Work — Saqib Ali Javaid",
-      "description": "Mobile and web work shipped for real clients — React Native apps for iOS and Android, Next.js applications in production, and the automation behind them.",
-      "ogDescription": "React Native apps and Next.js applications shipped for real clients."
+      "title": "Projects — React Native & Next.js Work | Saqib Ali Javaid",
+      "description": "Production React Native apps for iOS and Android, a multilingual Next.js brand site, and Supabase backends — client work shipped at Barq Dev and independently.",
+      "ogDescription": "React Native apps, multilingual Next.js builds and Supabase backends, shipped for real clients.",
+      "schemaType": "CollectionPage",
+      "breadcrumb": "Projects"
     },
     "/about": {
-      "title": "About — Saqib Ali Javaid",
-      "description": "I'm Saqib, a frontend engineer in Lahore building mobile apps with React Native and web apps with React and Next.js. Open to remote frontend roles.",
-      "ogDescription": "Frontend engineer building mobile apps with React Native and web apps with React and Next.js."
+      "title": "About — Frontend Engineer in Lahore | Saqib Ali Javaid",
+      "description": "I'm Saqib, a frontend engineer in Lahore, Pakistan. React Native, React and Next.js on the front, Supabase and Node.js behind it. BS Computer Science, PUCIT.",
+      "ogDescription": "Frontend engineer in Lahore. React Native, React and Next.js, with Supabase and Node.js behind them.",
+      "schemaType": "AboutPage",
+      "breadcrumb": "About"
     },
     "/contact": {
-      "title": "Contact — Saqib Ali Javaid",
-      "description": "Open to remote frontend roles and freelance work. Send a message about a React Native, React or Next.js build and I'll reply within 24 hours.",
-      "ogDescription": "Open to remote frontend roles. Send a message and I'll reply within 24 hours."
+      "title": "Contact — Hire a React Native Developer | Saqib Ali Javaid",
+      "description": "Get in touch about React Native, React or Next.js work. Open to remote frontend roles and freelance projects, and I reply within 24 hours.",
+      "ogDescription": "Open to remote frontend roles and freelance React Native and Next.js work. I reply within 24 hours.",
+      "schemaType": "ContactPage",
+      "breadcrumb": "Contact"
     }
   }
 }

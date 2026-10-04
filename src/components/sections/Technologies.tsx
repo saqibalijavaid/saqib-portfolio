@@ -105,12 +105,15 @@ const Technologies: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14">
-        <h2 className="text-base font-semibold text-accent-700 dark:text-accent-400 tracking-wide uppercase">
+        {/* The eyebrow was the <h2> and the real title a <p>, so the document
+            outline advertised "Tech Stack" and hid the sentence that actually
+            names the section. Swapped. */}
+        <p className="text-base font-semibold text-accent-700 dark:text-accent-400 tracking-wide uppercase">
           Tech Stack
-        </h2>
-        <p className="mt-2 font-display font-normal text-4xl text-gray-900 dark:text-white sm:text-5xl">
-          Tools I work with daily
         </p>
+        <h2 className="mt-2 font-display font-normal text-4xl text-gray-900 dark:text-white sm:text-5xl">
+          Tools I work with daily
+        </h2>
         <p className="mt-4 max-w-2xl text-gray-500 dark:text-gray-400 mx-auto font-mono text-sm">
           // Frontend first — React Native, React and Next.js, with the backend tooling to
           ship end to end.

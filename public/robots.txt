@@ -1,4 +1,10 @@
+# https://saqibalijavaid.me
+#
+# Everything is public and indexable. The only disallow is the serverless
+# contact endpoint, which is POST-only and has nothing to crawl.
+
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://saqibalijavaid.me/sitemap.xml

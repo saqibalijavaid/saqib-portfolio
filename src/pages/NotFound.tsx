@@ -23,7 +23,8 @@ const NotFound: React.FC = () => {
         <div className="mt-10 flex flex-wrap gap-4 justify-center">
           <Link
             to="/"
-            className="px-6 py-2 rounded-md font-semibold bg-accent-500 text-white hover:bg-accent-600 transition-all duration-200"
+            /* Dark on amber, matching Button.tsx — white here is 2.15:1. */
+            className="px-6 py-2 rounded-md font-semibold bg-accent-500 text-gray-950 hover:bg-accent-400 transition-all duration-200"
           >
             Back to Home
           </Link>

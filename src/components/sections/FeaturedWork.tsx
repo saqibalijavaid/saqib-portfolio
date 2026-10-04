@@ -58,7 +58,7 @@ const projects: ProjectItem[] = [
   },
 ];
 
-const Features: React.FC = () => {
+const FeaturedWork: React.FC = () => {
   return (
     <div className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,7 +93,9 @@ const Features: React.FC = () => {
               }`}
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-accent-500 text-white group-hover:scale-110 transition-transform duration-300">
+                {/* Dark glyph on amber: non-text contrast needs 3:1 and white
+                    manages only 2.15:1 here. */}
+                <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-accent-500 text-gray-950 group-hover:scale-110 transition-transform duration-300">
                   <project.icon className="h-6 w-6" strokeWidth={1.75} />
                 </div>
                 {project.liveUrl ? (
@@ -134,4 +136,4 @@ const Features: React.FC = () => {
   );
 };
 
-export default Features;
+export default FeaturedWork;

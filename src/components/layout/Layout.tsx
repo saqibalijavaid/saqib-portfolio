@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import NavigationDrawer from './NavigationDrawer';
 import Footer from './Footer';
 import SeoSync from '../common/SeoSync';
+import ScrollToTop from '../common/ScrollToTop';
 
 const Layout: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -16,6 +17,9 @@ const Layout: React.FC = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Keeps <head> metadata correct across client-side navigation */}
       <SeoSync />
+
+      {/* Starts each new page at the top, as a real page load would */}
+      <ScrollToTop />
 
       <Sidebar isOpen={isDrawerOpen} toggleMenu={toggleMenu} />
 

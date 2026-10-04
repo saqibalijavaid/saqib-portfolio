@@ -270,15 +270,21 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={status === 'sending' || status === 'success'}
+                /*
+                 * Text colour belongs to each state, not the shared base. Green
+                 * and red are dark enough to carry white, but amber is not —
+                 * white on accent-500 measures 2.15:1 against AA's 4.5:1, while
+                 * gray-950 measures 9.20:1. Matches Button.tsx.
+                 */
                 className={`
                   w-full flex items-center justify-center px-8 py-3 border border-transparent
-                  text-base font-bold rounded-md text-white transition-all duration-200
+                  text-base font-bold rounded-md transition-all duration-200
                   ${
                     status === 'success'
-                      ? 'bg-green-600 hover:bg-green-700'
+                      ? 'bg-green-600 hover:bg-green-700 text-white'
                       : status === 'error'
-                        ? 'bg-red-600 hover:bg-red-700'
-                        : 'bg-accent-500 hover:bg-accent-600'
+                        ? 'bg-red-600 hover:bg-red-700 text-white'
+                        : 'bg-accent-500 hover:bg-accent-400 text-gray-950'
                   }
                   disabled:opacity-70 disabled:cursor-not-allowed
                 `}
@@ -291,7 +297,9 @@ const Contact: React.FC = () => {
                 {status === 'sending' && (
                   <>
                     Sending...{' '}
-                    <div className="ml-2 w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    {/* Still on the amber background here, so the spinner is
+                        dark for the same reason the label is. */}
+                    <div className="ml-2 w-5 h-5 border-2 border-gray-950/30 border-t-gray-950 rounded-full animate-spin" />
                   </>
                 )}
                 {status === 'success' && (

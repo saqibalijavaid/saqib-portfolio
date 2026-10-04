@@ -44,7 +44,7 @@ const experience: ExperienceItem[] = [
   },
 ];
 
-const Testimonials: React.FC = () => {
+const Experience: React.FC = () => {
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +61,8 @@ const Testimonials: React.FC = () => {
           {experience.map((item, index) => (
             <li key={index} className="mb-12 ml-8 last:mb-0">
               <span className="absolute -left-[17px] flex items-center justify-center w-8 h-8 rounded-full bg-accent-500 ring-8 ring-gray-50 dark:ring-gray-800">
-                <Briefcase className="w-4 h-4 text-white" />
+                {/* Dark glyph on amber — white is 2.15:1 against the dot. */}
+                <Briefcase className="w-4 h-4 text-gray-950" />
               </span>
 
               <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
@@ -88,4 +89,4 @@ const Testimonials: React.FC = () => {
   );
 };
 
-export default Testimonials;
+export default Experience;

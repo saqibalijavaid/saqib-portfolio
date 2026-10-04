@@ -1,8 +1,8 @@
 import React from 'react';
 import Hero from '../components/sections/Hero';
 import Technologies from '../components/sections/Technologies';
-import Features from '../components/sections/Features';
-import Testimonials from '../components/sections/Testimonials';
+import FeaturedWork from '../components/sections/FeaturedWork';
+import Experience from '../components/sections/Experience';
 import CTA from '../components/sections/CTA';
 
 const Home: React.FC = () => {
@@ -10,8 +10,8 @@ const Home: React.FC = () => {
     <>
       <Hero />
       <Technologies /> {/* Adds credibility right after Hero */}
-      <Features />
-      <Testimonials />
+      <FeaturedWork />
+      <Experience />
       <CTA /> {/* Final push to contact before footer */}
     </>
   );

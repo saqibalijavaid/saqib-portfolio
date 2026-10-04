@@ -86,6 +86,48 @@
       transform: translateX(-100%);
     }
   }
+
+  /*
+   * Hero entrance. `animate-fade-in-up` was already used in Hero.tsx but was
+   * never defined here, so it compiled to nothing and the element simply
+   * appeared.
+   */
+  --animate-fade-in-up: fade-in-up 0.6s ease-out both;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/*
+ * Pauses an animation. Tailwind has no `animation-play-state` utility, so the
+ * `group-hover:paused` already on the marquee rows compiled to nothing and they
+ * never actually stopped. Registered with @utility rather than a plain class so
+ * variants like group-hover: still apply to it.
+ */
+@utility paused {
+  animation-play-state: paused;
+}
+
+/*
+ * WCAG 2.2.2 (Pause, Stop, Hide). The tech marquee moves indefinitely, so
+ * anyone who has asked their OS for reduced motion gets it stopped outright
+ * rather than merely slowed. Hover-pause above is not enough on its own: the
+ * badges are not focusable, so there is no keyboard equivalent.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .animate-infinite-scroll,
+  .animate-fade-in-up,
+  .animate-pulse {
+    animation: none;
+  }
 }
 
 /*

@@ -138,7 +138,9 @@ const Projects: React.FC = () => {
               className="group grid md:grid-cols-5 gap-8 p-8 md:p-10 bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 rounded-2xl hover:shadow-xl transition-all duration-300"
             >
               <div className="md:col-span-1">
-                <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-accent-500 text-white group-hover:scale-105 transition-transform duration-300">
+                {/* Dark glyph on amber: non-text contrast needs 3:1 and white
+                    manages only 2.15:1 here. */}
+                <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-accent-500 text-gray-950 group-hover:scale-105 transition-transform duration-300">
                   <project.icon size={32} strokeWidth={1.5} />
                 </div>
                 <p className="mt-6 font-mono text-xs uppercase tracking-wider text-gray-400">

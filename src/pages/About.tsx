@@ -1,8 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
-import { Zap, Target, Users, GraduationCap, Award, Link2, ExternalLink } from 'lucide-react';
-import { useTheme } from '../context/theme-context';
+import {
+  Zap,
+  Target,
+  Users,
+  GraduationCap,
+  Award,
+  Link2,
+  ExternalLink,
+  Linkedin,
+} from 'lucide-react';
 
 const certifications = [
   {
@@ -17,56 +25,58 @@ const certifications = [
   },
 ];
 
-const LinkedInBadge: React.FC = () => {
-  const { theme } = useTheme();
-  const containerRef = useRef<HTMLDivElement>(null);
+/*
+ * Replaces LinkedIn's embedded profile badge.
+ *
+ * That badge injected platform.linkedin.com/badges/js/profile.js on every
+ * visit to this page — the slowest thing on the site — and LinkedIn has put an
+ * end date on it, so it had started rendering a red "this feature will no
+ * longer be available" notice to every visitor. On a portfolio that reads as
+ * something broken.
+ *
+ * Built from assets already on the page instead: same information, no
+ * third-party request, no expiry, and it finally looks like the rest of the
+ * site rather than a square of LinkedIn chrome dropped into it. The headline
+ * is static, which is the one real trade — it changes about as often as the
+ * rest of this page does.
+ */
+const ProfileCard: React.FC = () => (
+  <div className="w-full max-w-sm rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-8 text-center shadow-sm">
+    {/* Decorative: the name is spelled out directly beneath it. */}
+    <img
+      src="/saqib.webp"
+      alt=""
+      width={112}
+      height={112}
+      loading="lazy"
+      decoding="async"
+      className="mx-auto h-28 w-28 rounded-full object-cover object-top ring-2 ring-accent-500/40"
+    />
 
-  useEffect(() => {
-    if (!containerRef.current) return;
+    <p className="mt-5 font-display font-normal text-3xl text-gray-900 dark:text-white">
+      Saqib Ali Javaid
+    </p>
+    <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+      Frontend Engineer @ Barq Dev
+    </p>
+    <p className="mt-1 font-mono text-xs text-gray-500 dark:text-gray-400">
+      React Native · React · Next.js
+    </p>
+    <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-gray-400 dark:text-gray-500">
+      Lahore, Pakistan
+    </p>
 
-    // Clear previous badge content
-    containerRef.current.innerHTML = '';
-
-    // Create the badge element
-    const badgeDiv = document.createElement('div');
-    badgeDiv.className = 'badge-base LI-profile-badge';
-    badgeDiv.setAttribute('data-locale', 'en_US');
-    badgeDiv.setAttribute('data-size', 'large');
-    badgeDiv.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
-    badgeDiv.setAttribute('data-type', 'VERTICAL');
-    badgeDiv.setAttribute('data-vanity', 'saqib-ali-javaid');
-    badgeDiv.setAttribute('data-version', 'v1');
-
-    const link = document.createElement('a');
-    link.className = 'badge-base__link LI-simple-link';
-    link.href = 'https://pk.linkedin.com/in/saqib-ali-javaid?trk=profile-badge';
-    link.textContent = 'Saqib Ali Javaid';
-    link.style.display = 'none';
-    badgeDiv.appendChild(link);
-
-    containerRef.current.appendChild(badgeDiv);
-
-    // Load (or re-run) the LinkedIn badge script
-    const script = document.createElement('script');
-    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-    script.async = true;
-    script.defer = true;
-    containerRef.current.appendChild(script);
-
-    /*
-     * Capture the node now rather than reading the ref during cleanup. By the
-     * time cleanup runs React may have detached or replaced the element, so
-     * containerRef.current could point somewhere else — or be null — and the
-     * badge markup would be left behind.
-     */
-    const container = containerRef.current;
-    return () => {
-      container.innerHTML = '';
-    };
-  }, [theme]);
-
-  return <div ref={containerRef} />;
-};
+    <a
+      href="https://www.linkedin.com/in/saqib-ali-javaid"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0A66C2] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#004182] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
+    >
+      <Linkedin className="h-4 w-4" aria-hidden="true" />
+      View LinkedIn profile
+    </a>
+  </div>
+);
 
 const About: React.FC = () => {
   return (
@@ -232,14 +242,18 @@ const About: React.FC = () => {
             <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-md">
               Let's connect on LinkedIn — I share updates on projects, automation tips, and what I'm building.
             </p>
-            <LinkedInBadge />
+            <ProfileCard />
+
+            {/* Follow is a different action from viewing the profile, so it
+                stays — as a quiet text link rather than a second blue pill
+                competing with the card's own button. */}
             <a
               href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=saqib-ali-javaid"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex justify-center items-center px-6 py-2 rounded-full bg-[#0A66C2] text-white text-sm font-medium hover:bg-[#004182] transition-colors duration-200"
+              className="mt-5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 transition-colors"
             >
-              Follow on LinkedIn
+              Or follow without connecting
             </a>
           </div>
         </div>

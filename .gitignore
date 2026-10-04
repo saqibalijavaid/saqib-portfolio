@@ -31,3 +31,5 @@ prompt.txt
 
 # Local-only working notes (not part of the shipped site)
 docs/
+
+dist-ssr

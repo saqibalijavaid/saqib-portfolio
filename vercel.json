@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
 
+  "comment": "trailingSlash:false makes /projects/ 308 to /projects, so one page is never reachable at two indexable URLs. It also keeps the live URL shape identical to the path the build renders, which is what the markup is hydrated against.",
+  "trailingSlash": false,
+
   "redirects": [
     {
       "source": "/(.*)",

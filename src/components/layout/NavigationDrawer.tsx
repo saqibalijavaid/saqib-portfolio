@@ -11,9 +11,18 @@ interface NavigationDrawerProps {
 const NavigationDrawer: React.FC<NavigationDrawerProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
 
+  /*
+   * Trailing slashes are stripped before comparing. A strict === meant
+   * /projects/ matched nothing, so that URL showed no active link at all — and
+   * because the build renders /projects while the browser might be on
+   * /projects/, the two produced different markup and hydration failed.
+   * Mirrors the same normalisation in SeoSync.
+   */
+  const normalise = (path: string) => path.replace(/\/+$/, '') || '/';
+
   // Helper to generate classes based on active state
   const getLinkClass = (path: string) => {
-    const isActive = location.pathname === path;
+    const isActive = normalise(location.pathname) === normalise(path);
 
     // Base classes for typography and layout
     const baseClasses = 'block py-3 transition-all duration-300 font-bold text-2xl md:text-5xl';

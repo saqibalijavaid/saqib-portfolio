@@ -1,66 +1,60 @@
-import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense, type ComponentType } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
-import Layout from './components/layout/Layout';
-import Home from './pages/Home';
+import AppRoutes, { type RoutePages } from './routes';
 
 /*
- * Home stays in the main bundle because it is the most common landing page and
- * should paint without a second network round trip. The rest are split out so a
- * visitor does not download the projects gallery, the contact form and the
- * About page's LinkedIn embed just to read the homepage.
+ * Browser entry. Every page but Home is code-split, so reading the homepage
+ * does not also pull down the projects gallery, the contact form and About.
  */
-const About = lazy(() => import('./pages/About'));
-const Projects = lazy(() => import('./pages/Projects'));
-const Contact = lazy(() => import('./pages/Contact'));
-const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Reserves roughly a viewport of height so swapping in the real page does not
 // shift the layout underneath the visitor.
 const RouteFallback = () => <div className="min-h-[70vh]" aria-busy="true" />;
 
-function App() {
+/** Each split page carries its own boundary, so one chunk never blocks another. */
+const split = (load: () => Promise<{ default: ComponentType }>): ComponentType => {
+  const Lazy = lazy(load);
+  return function SplitRoute() {
+    return (
+      <Suspense fallback={<RouteFallback />}>
+        <Lazy />
+      </Suspense>
+    );
+  };
+};
+
+const splitPages: RoutePages = {
+  About: split(() => import('./pages/About')),
+  Projects: split(() => import('./pages/Projects')),
+  Contact: split(() => import('./pages/Contact')),
+  NotFound: split(() => import('./pages/NotFound')),
+};
+
+/**
+ * The page whose chunk main.tsx already resolved, if any.
+ *
+ * It has to render synchronously on the first pass. The build ships each page's
+ * real markup, and a lazy component suspends on its first render even when the
+ * module is already in memory — so React would hydrate the server's finished
+ * page against a loading placeholder, decide they disagree, and throw the whole
+ * tree away. Every other route stays split, because client-side navigation has
+ * no markup to match and can afford to wait.
+ */
+export interface Preloaded {
+  name: keyof RoutePages;
+  Component: ComponentType;
+}
+
+function App({ preloaded }: { preloaded?: Preloaded }) {
+  const pages: RoutePages = preloaded
+    ? { ...splitPages, [preloaded.name]: preloaded.Component }
+    : splitPages;
+
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <Routes>
-          {/* The Layout wraps all these routes */}
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route
-              path="about"
-              element={
-                <Suspense fallback={<RouteFallback />}>
-                  <About />
-                </Suspense>
-              }
-            />
-            <Route
-              path="projects"
-              element={
-                <Suspense fallback={<RouteFallback />}>
-                  <Projects />
-                </Suspense>
-              }
-            />
-            <Route
-              path="contact"
-              element={
-                <Suspense fallback={<RouteFallback />}>
-                  <Contact />
-                </Suspense>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <Suspense fallback={<RouteFallback />}>
-                  <NotFound />
-                </Suspense>
-              }
-            />
-          </Route>
-        </Routes>
+        <AppRoutes pages={pages} />
       </BrowserRouter>
     </ThemeProvider>
   );

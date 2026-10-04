@@ -3,7 +3,7 @@ import { useTheme } from '../../context/theme-context';
 import { Sun, Moon } from 'lucide-react';
 
 const ThemeToggle: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
   return (
     <button
@@ -14,15 +14,17 @@ const ThemeToggle: React.FC = () => {
         dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 
         transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-500
       "
-      aria-label="Toggle Dark Mode"
+      aria-label="Toggle dark mode"
     >
-      {theme === 'light' ? (
-        // In Light Mode, show Moon (to switch to Dark)
-        <Moon size={20} strokeWidth={2} />
-      ) : (
-        // In Dark Mode, show Sun (to switch to Light)
-        <Sun size={20} strokeWidth={2} />
-      )}
+      {/*
+        Both icons are always in the markup and swapped with CSS rather than
+        with `theme`. The server cannot know a visitor's theme, so choosing the
+        icon in JavaScript would mismatch on hydration — and this way the right
+        one is already showing before React runs, driven by the same `dark`
+        class the inline script in index.html applies before first paint.
+      */}
+      <Moon size={20} strokeWidth={2} className="dark:hidden" aria-hidden="true" />
+      <Sun size={20} strokeWidth={2} className="hidden dark:block" aria-hidden="true" />
     </button>
   );
 };

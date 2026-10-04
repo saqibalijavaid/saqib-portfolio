@@ -257,14 +257,43 @@ const preloads = (path) =>
 const before = template.slice(0, template.indexOf(START));
 const after = template.slice(template.indexOf(END) + END.length);
 
+/*
+ * Render each route's markup into the shell.
+ *
+ * Until now only the <head> was generated and every page shipped an empty
+ * <div id="root">. Googlebot executes JavaScript so it coped, but the crawlers
+ * that increasingly decide whether a portfolio gets found — GPTBot, ClaudeBot,
+ * PerplexityBot and friends — largely do not, and were being served four
+ * documents with no content in them at all.
+ *
+ * ROOT_MARKER has to match the shell exactly; a silent miss here would ship
+ * empty pages that still look fine in a browser, which is the failure mode this
+ * whole step exists to prevent.
+ */
+const { render } = await import(join(root, 'dist-ssr/entry-server.js'));
+
+const ROOT_MARKER = '<div id="root"></div>';
+if (!template.includes(ROOT_MARKER)) {
+  throw new Error(`prerender: "${ROOT_MARKER}" not found in dist/index.html — did the shell change?`);
+}
+
 for (const [path, page] of Object.entries(seo.pages)) {
   const hints = preloads(path);
-  const html = `${before}${hints ? `${hints}\n    ` : ''}${buildHead(path, page).trim()}${after}`;
+  const head = `${before}${hints ? `${hints}\n    ` : ''}${buildHead(path, page).trim()}${after}`;
+
+  const body = await render(path);
+  if (!body.trim()) {
+    throw new Error(`prerender: ${path} rendered no markup`);
+  }
+
+  const html = head.replace(ROOT_MARKER, `<div id="root">${body}</div>`);
   const outFile = path === '/' ? join(distDir, 'index.html') : join(distDir, path, 'index.html');
 
   mkdirSync(dirname(outFile), { recursive: true });
   writeFileSync(outFile, html);
-  console.log(`  prerendered ${path.padEnd(12)} -> ${outFile.replace(`${distDir}/`, 'dist/')}`);
+
+  const kb = (Buffer.byteLength(body) / 1024).toFixed(1);
+  console.log(`  prerendered ${path.padEnd(12)} -> ${outFile.replace(`${distDir}/`, 'dist/')} (${kb} kB of markup)`);
 }
 
 /*

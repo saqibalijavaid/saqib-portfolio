@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Bot,
   Boxes,
   Braces,
   Code,
@@ -16,6 +17,7 @@ import {
   Smartphone,
   Terminal,
   Workflow,
+  Zap,
 } from 'lucide-react';
 
 interface Tech {
@@ -80,7 +82,11 @@ const groups: { label: string; items: Tech[] }[] = [
   },
   {
     label: 'Automation',
-    items: [{ name: 'n8n', icon: Workflow }],
+    items: [
+      { name: 'n8n', icon: Workflow },
+      { name: 'Zapier', icon: Zap },
+      { name: 'Selenium', icon: Bot },
+    ],
   },
 ];
 

@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
 
-  "comment": "trailingSlash:false makes /projects/ 308 to /projects, so one page is never reachable at two indexable URLs. It also keeps the live URL shape identical to the path the build renders, which is what the markup is hydrated against.",
   "trailingSlash": false,
 
   "redirects": [
@@ -27,12 +26,10 @@
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
-      "comment": "Crawlers refetch these far more often than the hashed assets, and a stale sitemap or robots file is worth re-reading cheaply rather than caching for a year.",
       "source": "/(sitemap.xml|robots.txt)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }]
     },
     {
-      "comment": "Baseline security headers. HSTS is already sent by Vercel; these cover the rest and are what Lighthouse Best Practices looks for. No CSP: this site loads no third-party script since the LinkedIn badge was removed, but a CSP authored blind is a good way to break a deploy quietly.",
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },

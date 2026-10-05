@@ -29,7 +29,8 @@ prompt.txt
 .vercel
 .env*
 
-# Local-only working notes (not part of the shipped site)
-docs/
+# docs/ is tracked on purpose — it is the project's knowledge base and must
+# survive a fresh clone. Use scratch/ for throwaway local notes instead.
+scratch/
 
 dist-ssr

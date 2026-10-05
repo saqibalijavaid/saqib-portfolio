@@ -12,6 +12,10 @@ Personal portfolio for Saqib Ali Javaid — **[saqibalijavaid.me](https://saqiba
 A four-page site built with React 19, TypeScript, Vite and Tailwind CSS v4,
 statically prerendered at build time and deployed on Vercel.
 
+> **Working on this codebase?** Start with **[CLAUDE.md](CLAUDE.md)** — it is the
+> project's knowledge base, covering architecture, conventions, current status
+> and the traps that have already cost time. Deeper notes live in [`docs/`](docs).
+
 ---
 
 ## Why it is not just a Vite SPA
